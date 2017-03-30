@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.wilsona.mastermind.MainMenu">
+
+    <TextView
+        android:id="@+id/txtTitel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical|fill_horizontal"
+        android:text="TextView"
+        android:textAlignment="gravity"
+        android:textSize="55sp"
+        tools:text="MASTER MIND"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
+
+    <Button
+        android:id="@+id/btnEasy"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/txtTitel"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="97dp"
+        android:text="Easy" />
+
+    <Button
+        android:id="@+id/btnHard"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/btnEasy"
+        android:layout_alignStart="@+id/btnEasy"
+        android:layout_below="@+id/btnEasy"
+        android:layout_marginTop="89dp"
+        android:text="Hard" />
+</RelativeLayout>
