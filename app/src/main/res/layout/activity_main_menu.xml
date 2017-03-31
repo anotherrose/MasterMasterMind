@@ -25,6 +25,7 @@
         android:layout_below="@+id/txtTitel"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="97dp"
+        android:onClick="StartEasy"
         android:text="Easy" />
 
     <Button
