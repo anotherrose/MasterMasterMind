@@ -14,7 +14,7 @@ public class MainMenu extends AppCompatActivity {
     }
 
     public void StartEasy(View view) {
-        Intent intent = new Intent(this, SplashScreen.class);
+        Intent intent = new Intent(this, EasyBoard.class);
         startActivity(intent);
     }
 }

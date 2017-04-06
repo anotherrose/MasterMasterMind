@@ -2,7 +2,9 @@ package com.example.wilsona.mastermind;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.BaseAdapter;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Spinner;
@@ -10,13 +12,15 @@ import android.widget.TableLayout;
 import android.widget.TableRow;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 public class EasyBoard extends AppCompatActivity {
 
     private Spinner spinnerOne, spinnerTwo, spinnerThree, spinnerFour;
-    private Button btnSubmit;
+    private Button submit;
 
+    private String[] imageNameDatabase = { "Red Peg", "Yellow Peg", "Blue Peg", "Green Peg"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,19 +32,19 @@ public class EasyBoard extends AppCompatActivity {
         spinnerThree = (Spinner) findViewById(R.id.spnUserPegThree);
         spinnerFour = (Spinner) findViewById(R.id.spnUserPegFour);
 
-        addItemsToSpinners();
+        submit = (Button) findViewById(R.id.btnSubmit);
+
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
+                R.layout.spinner_row, R.id.txtPegOne, imageNameDatabase);
+        spinnerOne.setAdapter(adapter);
+
     }
 
-    public void addItemsToSpinners() {
 
-        List<String> list = new ArrayList<>();
-        list.add("");
-        list.add("");
-        list.add("");
-        list.add("");
-        ArrayAdapter<String> dataAdapter = new ArrayAdapter<>(this,
-                android.R.layout.simple_spinner_item, list);
-        dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        spinnerTwo.setAdapter(dataAdapter);
+
+    public void submit(View view) {
+        return;
     }
+
 }
+

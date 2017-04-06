@@ -17,5 +17,5 @@
         android:text="TextView"
         android:textAlignment="center"
         android:textSize="75sp"
-        tools:text="WELCOME TO MASTER MIND NEWB" />
+        tools:text=" " />
 </RelativeLayout>

@@ -338,28 +338,32 @@
             android:id="@+id/spnUserPegOne"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:layout_weight="1" />
+            android:layout_weight="1"
+            android:spinnerMode="dialog"/>
 
         <Spinner
             android:id="@+id/spnUserPegTwo"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:layout_weight="1" />
+            android:layout_weight="1"
+            android:spinnerMode="dialog"/>
 
         <Spinner
             android:id="@+id/spnUserPegThree"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:layout_weight="1" />
+            android:layout_weight="1"
+            android:spinnerMode="dialog"/>
 
         <Spinner
             android:id="@+id/spnUserPegFour"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:layout_weight="1" />
+            android:layout_weight="1"
+            android:spinnerMode="dialog"/>
 
         <Button
-            android:id="@+id/button"
+            android:id="@+id/btnSubmit"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
