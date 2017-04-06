@@ -12,9 +12,9 @@
 
         <ImageView
             android:id="@+id/imgRedPeg"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="0.04"
+            android:layout_width="50dp"
+            android:layout_height="67dp"
+            android:layout_weight="0.10"
             app:srcCompat="@drawable/redpeg" />
 
         <TextView
@@ -32,9 +32,8 @@
 
         <ImageView
             android:id="@+id/imgYellowPeg"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="0.04"
+            android:layout_width="82dp"
+            android:layout_height="73dp"
             app:srcCompat="@drawable/yellowpeg" />
 
         <TextView
@@ -52,9 +51,8 @@
 
         <ImageView
             android:id="@+id/imgGreenPeg"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="0.04"
+            android:layout_width="79dp"
+            android:layout_height="80dp"
             app:srcCompat="@drawable/greenpeg" />
 
         <TextView
@@ -72,9 +70,8 @@
 
         <ImageView
             android:id="@+id/imgBluePeg"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="0.04"
+            android:layout_width="79dp"
+            android:layout_height="85dp"
             app:srcCompat="@drawable/bluepeg" />
 
         <TextView
