@@ -20,7 +20,7 @@ public class EasyBoard extends AppCompatActivity {
     private Spinner spinnerOne, spinnerTwo, spinnerThree, spinnerFour;
     private Button submit;
 
-    private int[] imgData = { R.drawable.greenpeg};
+    private int[] imgData = {R.drawable.greenpeg};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
