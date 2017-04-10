@@ -18,7 +18,7 @@
             app:srcCompat="@drawable/greenpeg" />
 
         <TextView
-            android:id="@+id/txtPegOne"
+            android:id="@+id/txtPeg"
             android:layout_width="wrap_content"
             android:layout_height="fill_parent"
             android:layout_weight="1" />

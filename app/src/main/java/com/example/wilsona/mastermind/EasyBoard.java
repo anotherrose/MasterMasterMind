@@ -20,7 +20,7 @@ public class EasyBoard extends AppCompatActivity {
     private Spinner spinnerOne, spinnerTwo, spinnerThree, spinnerFour;
     private Button submit;
 
-    private String[] imageNameDatabase = { "Red Peg", "Yellow Peg", "Blue Peg", "Green Peg"};
+    private int[] imgData = { R.drawable.greenpeg};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,17 +34,13 @@ public class EasyBoard extends AppCompatActivity {
 
         submit = (Button) findViewById(R.id.btnSubmit);
 
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
-                R.layout.spinner_row, R.id.txtPegOne, imageNameDatabase);
+        CustomAdapter adapter = new CustomAdapter(getBaseContext(),R.layout.spinner_row,null,imgData);
         spinnerOne.setAdapter(adapter);
 
     }
 
 
-
-    public void submit(View view) {
-        return;
-    }
+    public void submit(View view) {}
 
 }
 
