@@ -11,7 +11,7 @@
         android:orientation="horizontal">
 
         <ImageView
-            android:id="@+id/imgRedPeg"
+            android:id="@+id/imgPeg"
             android:layout_width="50dp"
             android:layout_height="67dp"
             android:layout_weight="0.10"
