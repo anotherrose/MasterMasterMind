@@ -13,8 +13,8 @@ public class EasyBoard extends AppCompatActivity {
 
     private Spinner spinnerOne, spinnerTwo, spinnerThree, spinnerFour;
     private Button submit;
+    private Button pegOne, pegTwo, pegThree, pegFour;
 
-    private int[] imgData = {R.drawable.greenpeg, R.drawable.redpeg};
 
     private String[] imgNameData = { "green", "red"};
 
@@ -31,8 +31,10 @@ public class EasyBoard extends AppCompatActivity {
 
         submit = (Button) findViewById(R.id.btnSubmit);
 
-        CustomSpinnerAdapter adapter = new CustomSpinnerAdapter(getBaseContext(),R.layout.spinner_row,null,imgData);
-        spinnerOne.setAdapter(adapter);
+        pegOne = (Button) findViewById(R.id.btnPegOne);
+        pegTwo = (Button) findViewById(R.id.btnPegTwo);
+        pegThree = (Button) findViewById(R.id.btnPegThree);
+        pegFour = (Button) findViewById(R.id.btnPegFour);
 
     }
 
@@ -40,28 +42,6 @@ public class EasyBoard extends AppCompatActivity {
     public void submit(View view) {}
 
 
-
-    private void initializeImageList() {
-        for (int i = 0; i < imgNameData.length; i++) {
-            map = new HashMap<String, Object>();
-
-            map.put("Name", imgNameData[i]);
-            map.put("Icon", imgData[i]);
-            spinnerOne.add(map);
-        }
-        ImageView imageView = new ImageView(this);
-        imageView.setBackgroundResource((spinnerOne.get(0).get("Icon")));
-        spinnerOne.get(0).get("Name");
-    }
-
-    public void createAddDialog() {
-        Spinner spin = (Spinner) findViewById(R.id.spnUserPegOne);
-        CustomSpinnerAdapter adapter = new CustomSpinnerAdapter(this,
-                spinnerData, R.layout.spinner_row, new String[] { "Name",
-                "Icon" }, new int[] { R.id.imageNameSpinner,
-                R.id.imageIconSpinner });
-        spin.setAdapter(adapter);
-    }
 
 
 }
