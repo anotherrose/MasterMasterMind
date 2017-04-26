@@ -63,27 +63,32 @@ public class EasyBoard extends AppCompatActivity {
     }
 
     public void buttonThreeChange(View view) {
-        if(clrTwo+1>4)
-            clrOne=1;
+        if(clrThree+1>4)
+            clrThree=1;
         else
-            clrOne++;
-        changeColor(btnPegOne,clrOne);
+            clrThree++;
+        changeColor(btnPegThree,clrThree);
     }
 
     public void buttonFourChange(View view) {
-        if(clrOne+1>4)
-            clrOne=1;
+        if(clrFour+1>4)
+            clrFour=1;
         else
-            clrOne++;
-        changeColor(btnPegOne,clrOne);
+            clrFour++;
+        changeColor(btnPegFour,clrFour);
     }
 
     private void changeColor(Button peg, int clrOne) {
         switch (clrOne){
             case 1: peg.setBackgroundColor(Color.RED);
+                break;
             case 2: peg.setBackgroundColor(Color.YELLOW);
+                break;
             case 3: peg.setBackgroundColor(Color.BLUE);
+                break;
             case 4: peg.setBackgroundColor(Color.GREEN);
+                break;
+            default: return;
 
         }
 
