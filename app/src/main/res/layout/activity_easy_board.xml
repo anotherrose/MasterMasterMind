@@ -222,7 +222,7 @@
                 android:isScrollContainer="false">
 
                 <TableRow
-                    android:id="@+id/TblAnswerRowTwoTopRow"
+                    android:id="@+id/TblAnswerRowThreeTopRow"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent">
 
@@ -240,7 +240,7 @@
                 </TableRow>
 
                 <TableRow
-                    android:id="@+id/TblAnswerTwoBotRow"
+                    android:id="@+id/TblAnswerThreeBotRow"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent">
 
@@ -334,7 +334,7 @@
                 </TableRow>
 
                 <TableRow
-                    android:id="@+id/TblAnswerRowOneBotRow"
+                    android:id="@+id/TblAnswerRowFourBotRow"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent">
 
@@ -427,25 +427,29 @@
             android:id="@+id/btnPegOne"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:layout_weight="1" />
+            android:layout_weight="1"
+            android:onClick="buttonOneChange" />
 
         <Button
             android:id="@+id/btnPegTwo"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:layout_weight="1" />
+            android:layout_weight="1"
+            android:onClick="buttonTwoChange" />
 
         <Button
             android:id="@+id/btnPegThree"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:layout_weight="1" />
+            android:layout_weight="1"
+            android:onClick="buttonThreeChange" />
 
         <Button
             android:id="@+id/btnPegFour"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:layout_weight="1" />
+            android:layout_weight="1"
+            android:onClick="buttonFourChange" />
 
         <Button
             android:id="@+id/btnSubmit"
