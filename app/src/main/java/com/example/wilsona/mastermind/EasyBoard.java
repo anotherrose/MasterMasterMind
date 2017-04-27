@@ -1,11 +1,13 @@
 package com.example.wilsona.mastermind;
 
 import android.graphics.Color;
+import android.graphics.Interpolator;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 
 public class EasyBoard extends AppCompatActivity {
@@ -13,8 +15,8 @@ public class EasyBoard extends AppCompatActivity {
     private int clrOne, clrTwo, clrThree, clrFour;
     private Button submit;
     private Button btnPegOne, btnPegTwo, btnPegThree, btnPegFour;
-
-
+    private peg[] masterCode;
+    private peg allPegs[][];
     private String[] imgNameData = { "green", "red"};
 
     private HashMap map;
@@ -35,19 +37,51 @@ public class EasyBoard extends AppCompatActivity {
         btnPegFour = (Button) findViewById(R.id.btnPegFour);
         clrFour = 0;
 
+        createMasterCode();
+    }
+
+    private void createMasterCode() {
+        allPegs= new peg[5][3];
+        ArrayList<Integer> unusedColors= new ArrayList<Integer>();
+
+        for(int i=0; i<allPegs[0].length; i++){
+            unusedColors.add(i);
+        }
+
+        for (int r=0; r<allPegs[0].length;r++)
+            for (int c=0;r<allPegs[r].length;c++){
+                peg newPeg = new peg(r+1,c+1);
+                allPegs[r][c]=newPeg;
+            }
+
+        for (int i=0; i<masterCode.length; i++){
+            (int) (Math.random()*6);
+        }
+
+
+        masterCode = {};
     }
 
 
     public void submit(View view) {
         peg pegOne = new peg(1,clrOne);
         peg pegTwo = new peg(2,clrTwo);
-        peg pegThree= new peg(1,clrThree);
-        peg pegFour = new peg(1,clrFour);
+        peg pegThree= new peg(3,clrThree);
+        peg pegFour = new peg(4,clrFour);
+
+
+
+        clrOne=0;
+        clrTwo=0;
+        clrThree=0;
+        clrFour=0;
+
+        submit.setEnabled(false);
     }
 
 
     public void buttonOneChange(View view) {
-        if(clrOne+1>4)
+        if(clrOne>=6)
             clrOne=1;
         else
             clrOne++;
@@ -55,7 +89,7 @@ public class EasyBoard extends AppCompatActivity {
     }
 
     public void buttonTwoChange(View view) {
-        if(clrTwo+1>4)
+        if(clrTwo>=6)
             clrTwo=1;
         else
             clrTwo++;
@@ -63,7 +97,7 @@ public class EasyBoard extends AppCompatActivity {
     }
 
     public void buttonThreeChange(View view) {
-        if(clrThree+1>4)
+        if(clrThree>=6)
             clrThree=1;
         else
             clrThree++;
@@ -71,15 +105,17 @@ public class EasyBoard extends AppCompatActivity {
     }
 
     public void buttonFourChange(View view) {
-        if(clrFour+1>4)
+        if(clrFour>=6)
             clrFour=1;
         else
             clrFour++;
         changeColor(btnPegFour,clrFour);
     }
 
-    private void changeColor(Button peg, int clrOne) {
-        switch (clrOne){
+    private void changeColor(Button peg, int clr) {
+        switch (clr){
+            case 0: peg.setBackgroundColor(Color.GRAY);
+                break;
             case 1: peg.setBackgroundColor(Color.RED);
                 break;
             case 2: peg.setBackgroundColor(Color.YELLOW);
@@ -88,8 +124,11 @@ public class EasyBoard extends AppCompatActivity {
                 break;
             case 4: peg.setBackgroundColor(Color.GREEN);
                 break;
+            case 5: peg.setBackgroundColor(Color.rgb(255,105,180));
+                break;
+            case 6: peg.setBackgroundColor(Color.MAGENTA);
+                break;
             default: return;
-
         }
 
         if (clrOne>0&&clrTwo>0&&clrThree>0&&clrFour>0){
