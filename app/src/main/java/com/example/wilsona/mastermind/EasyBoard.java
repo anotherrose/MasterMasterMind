@@ -16,8 +16,8 @@ public class EasyBoard extends AppCompatActivity {
     private Button submit;
     private Button btnPegOne, btnPegTwo, btnPegThree, btnPegFour;
     private peg[] masterCode;
-    private peg allPegs[][];
-    private String[] imgNameData = { "green", "red"};
+    private String[] allColors;
+    private int numColors = 6;
 
     private HashMap map;
     @Override
@@ -37,29 +37,29 @@ public class EasyBoard extends AppCompatActivity {
         btnPegFour = (Button) findViewById(R.id.btnPegFour);
         clrFour = 0;
 
+        allColors = new String[]{"red", "yellow", "blue", "green", "pink", "magenta"};
+
         createMasterCode();
     }
 
     private void createMasterCode() {
-        allPegs= new peg[5][3];
-        ArrayList<Integer> unusedColors= new ArrayList<Integer>();
+        ArrayList<String> unusedColors= new ArrayList<String>();
+        masterCode = new peg[3];
+        String color;
+        int pos=0;
 
-        for(int i=0; i<allPegs[0].length; i++){
-            unusedColors.add(i);
+        for(int i=1; i<=allColors.length; i++){
+            unusedColors.add(allColors[i-1]);
         }
 
-        for (int r=0; r<allPegs[0].length;r++)
-            for (int c=0;r<allPegs[r].length;c++){
-                peg newPeg = new peg(r+1,c+1);
-                allPegs[r][c]=newPeg;
+        do while(masterCode[masterCode.length-1]==null){
+            color=allColors[(int) ((Math.random()*6)+1)];
+            if (unusedColors.contains(color)){
+                masterCode[pos]= new peg(pos,color);
             }
 
-        for (int i=0; i<masterCode.length; i++){
-            (int) (Math.random()*6);
         }
 
-
-        masterCode = {};
     }
 
 
@@ -68,8 +68,6 @@ public class EasyBoard extends AppCompatActivity {
         peg pegTwo = new peg(2,clrTwo);
         peg pegThree= new peg(3,clrThree);
         peg pegFour = new peg(4,clrFour);
-
-
 
         clrOne=0;
         clrTwo=0;
