@@ -4,6 +4,7 @@ import android.graphics.Color;
 import android.graphics.Interpolator;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
@@ -44,7 +45,7 @@ public class EasyBoard extends AppCompatActivity {
 
     private void createMasterCode() {
         ArrayList<String> unusedColors= new ArrayList<String>();
-        masterCode = new peg[3];
+        masterCode = new peg[4];
         String color;
         int pos=0;
 
@@ -52,13 +53,17 @@ public class EasyBoard extends AppCompatActivity {
             unusedColors.add(allColors[i-1]);
         }
 
-        do while(masterCode[masterCode.length-1]==null){
+        do {
             color=allColors[(int) ((Math.random()*6)+1)];
             if (unusedColors.contains(color)){
                 masterCode[pos]= new peg(pos,color);
                 pos++;
             }
 
+        } while(masterCode[masterCode.length-1]==null);
+
+        for (peg myPeg : masterCode){
+            Log.i(myPeg.getPosition()+"",myPeg.getColorWord());
         }
 
     }
