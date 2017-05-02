@@ -18,7 +18,7 @@ public class EasyBoard extends AppCompatActivity {
     private peg[] masterCode;
     private String[] allColors;
     private int numColors = 6;
-
+    private int guess = 0;
     private HashMap map;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,6 +56,7 @@ public class EasyBoard extends AppCompatActivity {
             color=allColors[(int) ((Math.random()*6)+1)];
             if (unusedColors.contains(color)){
                 masterCode[pos]= new peg(pos,color);
+                pos++;
             }
 
         }
@@ -75,6 +76,7 @@ public class EasyBoard extends AppCompatActivity {
         clrFour=0;
 
         submit.setEnabled(false);
+
     }
 
 
