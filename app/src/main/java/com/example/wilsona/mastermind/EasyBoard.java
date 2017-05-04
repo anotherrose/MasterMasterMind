@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -14,13 +15,31 @@ import java.util.HashMap;
 public class EasyBoard extends AppCompatActivity {
 
     private int clrOne, clrTwo, clrThree, clrFour;
+    private int[] userColors;
     private Button submit;
     private Button btnPegOne, btnPegTwo, btnPegThree, btnPegFour;
+    private Button[] gameButtons;
+    private peg[] userPegs;
     private peg[] masterCode;
     private String[] allColors;
     private int numColors = 6;
     private int guess = 0;
     private HashMap map;
+
+    ImageView imgGuessAnswerTL
+    ImageView imgGuessAnswerTR = (ImageView) findViewById(R.id.imgRowOneAnswerPegTwo);
+    ImageView imgGuessAnswerBL = (ImageView) findViewById(R.id.imgRowOneAnswerPegThree);
+    ImageView imgGuessAnswerBR = (ImageView) findViewById(R.id.imgRowOneAnswerPegFour);
+
+    ImageView imgGuessOne;
+    ImageView imgGuessTwo = (ImageView) findViewById(R.id.imgRowOnePegTwo);
+    ImageView imgGuessThree = (ImageView) findViewById(R.id.imgRowOnePegThree);
+    ImageView imgGuessFour = (ImageView) findViewById(R.id.imgRowOnePegFour);
+
+    private ImageView[] guessDisplay;
+
+    private ImageView[] guessAnswers;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -38,9 +57,25 @@ public class EasyBoard extends AppCompatActivity {
         btnPegFour = (Button) findViewById(R.id.btnPegFour);
         clrFour = 0;
 
+        gameButtons = new Button[]{btnPegOne, btnPegTwo,btnPegThree,btnPegFour};
         allColors = new String[]{"red", "yellow", "blue", "green", "pink", "magenta"};
 
         createMasterCode();
+        createImages();
+    }
+
+    private void createImages() {
+        ImageView imgGuessAnswerTL = (ImageView) findViewById(R.id.imgRowOneAnswerPegOne);
+        ImageView imgGuessAnswerTR = (ImageView) findViewById(R.id.imgRowOneAnswerPegTwo);
+        ImageView imgGuessAnswerBL = (ImageView) findViewById(R.id.imgRowOneAnswerPegThree);
+        ImageView imgGuessAnswerBR = (ImageView) findViewById(R.id.imgRowOneAnswerPegFour);
+
+        ImageView imgGuessOne = (ImageView) findViewById(R.id.imgRowOnePegOne);
+        ImageView imgGuessTwo = (ImageView) findViewById(R.id.imgRowOnePegTwo);
+        ImageView imgGuessThree = (ImageView) findViewById(R.id.imgRowOnePegThree);
+        ImageView imgGuessFour = (ImageView) findViewById(R.id.imgRowOnePegFour);
+
+        guessDisplay = new ImageView[]{}
     }
 
     private void createMasterCode() {
@@ -57,6 +92,7 @@ public class EasyBoard extends AppCompatActivity {
             color=allColors[(int) ((Math.random()*6)+1)];
             if (unusedColors.contains(color)){
                 masterCode[pos]= new peg(pos,color);
+                unusedColors.remove(unusedColors.indexOf(color));
                 pos++;
             }
 
@@ -80,13 +116,19 @@ public class EasyBoard extends AppCompatActivity {
         clrThree=0;
         clrFour=0;
 
+        userColors = new int[]{clrOne, clrTwo, clrThree, clrFour};
+        userPegs = new peg[]{pegOne, pegTwo, pegThree, pegFour};
+
+        for(int i=0; i<gameButtons.length;i++)
+            changeColor(gameButtons[i],0);
+
         submit.setEnabled(false);
 
     }
 
 
     public void buttonOneChange(View view) {
-        if(clrOne>=6)
+        if(clrOne>=allColors.length)
             clrOne=1;
         else
             clrOne++;
@@ -94,7 +136,7 @@ public class EasyBoard extends AppCompatActivity {
     }
 
     public void buttonTwoChange(View view) {
-        if(clrTwo>=6)
+        if(clrTwo>=allColors.length)
             clrTwo=1;
         else
             clrTwo++;
@@ -102,7 +144,7 @@ public class EasyBoard extends AppCompatActivity {
     }
 
     public void buttonThreeChange(View view) {
-        if(clrThree>=6)
+        if(clrThree>=allColors.length)
             clrThree=1;
         else
             clrThree++;
@@ -110,7 +152,7 @@ public class EasyBoard extends AppCompatActivity {
     }
 
     public void buttonFourChange(View view) {
-        if(clrFour>=6)
+        if(clrFour>=allColors.length)
             clrFour=1;
         else
             clrFour++;
