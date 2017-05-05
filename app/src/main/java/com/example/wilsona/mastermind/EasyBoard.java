@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 
 import java.util.ArrayList;
@@ -17,28 +18,28 @@ public class EasyBoard extends AppCompatActivity {
     private int clrOne, clrTwo, clrThree, clrFour;
     private int[] userColors;
     private Button submit;
-    private Button btnPegOne, btnPegTwo, btnPegThree, btnPegFour;
-    private Button[] gameButtons;
+    private ImageButton btnPegOne, btnPegTwo, btnPegThree, btnPegFour;
+    private ImageButton[] gameButtons;
     private peg[] userPegs;
     private peg[] masterCode;
     private String[] allColors;
     private int numColors = 6;
     private int guess = 0;
-    private HashMap map;
+    private int imgEmpty, imgBlue, imgGreen, imgRed, imgOrange, imgYellow, imgMagenta;
 
-    ImageView imgGuessAnswerTL
-    ImageView imgGuessAnswerTR = (ImageView) findViewById(R.id.imgRowOneAnswerPegTwo);
-    ImageView imgGuessAnswerBL = (ImageView) findViewById(R.id.imgRowOneAnswerPegThree);
-    ImageView imgGuessAnswerBR = (ImageView) findViewById(R.id.imgRowOneAnswerPegFour);
+    ImageView imgGuessAnswerTL;
+    ImageView imgGuessAnswerTR;
+    ImageView imgGuessAnswerBL;
+    ImageView imgGuessAnswerBR;
 
     ImageView imgGuessOne;
-    ImageView imgGuessTwo = (ImageView) findViewById(R.id.imgRowOnePegTwo);
-    ImageView imgGuessThree = (ImageView) findViewById(R.id.imgRowOnePegThree);
-    ImageView imgGuessFour = (ImageView) findViewById(R.id.imgRowOnePegFour);
+    ImageView imgGuessTwo;
+    ImageView imgGuessThree;
+    ImageView imgGuessFour;
 
     private ImageView[] guessDisplay;
-
-    private ImageView[] guessAnswers;
+    private int[] imgColors;
+    private ImageView[][] guessAnswers;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,17 +49,18 @@ public class EasyBoard extends AppCompatActivity {
         submit = (Button) findViewById(R.id.btnSubmit);
         submit.setEnabled(false);
 
-        btnPegOne = (Button) findViewById(R.id.btnPegOne);
+        btnPegOne = (ImageButton) findViewById(R.id.btnPegOne);
         clrOne = 0;
-        btnPegTwo = (Button) findViewById(R.id.btnPegTwo);
+        btnPegTwo = (ImageButton) findViewById(R.id.btnPegTwo);
         clrTwo = 0;
-        btnPegThree = (Button) findViewById(R.id.btnPegThree);
+        btnPegThree = (ImageButton) findViewById(R.id.btnPegThree);
         clrThree = 0;
-        btnPegFour = (Button) findViewById(R.id.btnPegFour);
+        btnPegFour = (ImageButton) findViewById(R.id.btnPegFour);
         clrFour = 0;
 
-        gameButtons = new Button[]{btnPegOne, btnPegTwo,btnPegThree,btnPegFour};
-        allColors = new String[]{"red", "yellow", "blue", "green", "pink", "magenta"};
+        gameButtons = new ImageButton[]{btnPegOne, btnPegTwo,btnPegThree,btnPegFour};
+        //allColors = new String[]{"red", "yellow", "blue", "green", "pink", "magenta"};
+        imgColors = new int[]{R.drawable.pegBlue, R.drawable.pegGreen, R.drawable.pegRed, R.drawable.pegOrange, R.drawable.pegYellow, R.drawable.pegMagenta};
 
         createMasterCode();
         createImages();
@@ -75,27 +77,27 @@ public class EasyBoard extends AppCompatActivity {
         ImageView imgGuessThree = (ImageView) findViewById(R.id.imgRowOnePegThree);
         ImageView imgGuessFour = (ImageView) findViewById(R.id.imgRowOnePegFour);
 
-        guessDisplay = new ImageView[]{}
-    }
+        guessDisplay = new ImageView[]{imgGuessOne, imgGuessTwo, imgGuessThree, imgGuessFour};
 
+        guessAnswers = new ImageView[][]{{imgGuessAnswerTL, imgGuessAnswerTR},{imgGuessAnswerBL, imgGuessAnswerBR}};
+    }
     private void createMasterCode() {
-        ArrayList<String> unusedColors= new ArrayList<String>();
+        ArrayList<Integer> unusedColors= new ArrayList<Integer>();
         masterCode = new peg[4];
-        String color;
+        int color;
         int pos=0;
 
         for(int i=1; i<=allColors.length; i++){
-            unusedColors.add(allColors[i-1]);
+            unusedColors.add(imgColors[i-1]);
         }
 
         do {
-            color=allColors[(int) ((Math.random()*6)+1)];
+            color=imgColors[(int) ((Math.random()*6)+1)];
             if (unusedColors.contains(color)){
                 masterCode[pos]= new peg(pos,color);
                 unusedColors.remove(unusedColors.indexOf(color));
                 pos++;
             }
-
         } while(masterCode[masterCode.length-1]==null);
 
         for (peg myPeg : masterCode){
@@ -120,7 +122,7 @@ public class EasyBoard extends AppCompatActivity {
         userPegs = new peg[]{pegOne, pegTwo, pegThree, pegFour};
 
         for(int i=0; i<gameButtons.length;i++)
-            changeColor(gameButtons[i],0);
+            changeColor(gameButtons[i],R.drawable.pegEmpty);
 
         submit.setEnabled(false);
 
@@ -159,21 +161,21 @@ public class EasyBoard extends AppCompatActivity {
         changeColor(btnPegFour,clrFour);
     }
 
-    private void changeColor(Button peg, int clr) {
+    private void changeColor(ImageButton peg, int clr) {
         switch (clr){
-            case 0: peg.setBackgroundColor(Color.GRAY);
+            case 0: peg.setImageResource(imgEmpty);
                 break;
-            case 1: peg.setBackgroundColor(Color.RED);
+            case 1: peg.setImageResource(imgRed);
                 break;
-            case 2: peg.setBackgroundColor(Color.YELLOW);
+            case 2: peg.setImageResource(imgYellow);
                 break;
-            case 3: peg.setBackgroundColor(Color.BLUE);
+            case 3: peg.setImageResource(imgBlue);
                 break;
-            case 4: peg.setBackgroundColor(Color.GREEN);
+            case 4: peg.setImageResource(imgGreen);
                 break;
-            case 5: peg.setBackgroundColor(Color.rgb(255,105,180));
+            case 5: peg.setImageResource(imgOrange);
                 break;
-            case 6: peg.setBackgroundColor(Color.MAGENTA);
+            case 6: peg.setImageResource(imgMagenta);
                 break;
             default: return;
         }

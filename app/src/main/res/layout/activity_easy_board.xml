@@ -424,33 +424,37 @@
         android:gravity="center_vertical|center_horizontal"
         android:orientation="horizontal">
 
-        <Button
+        <ImageButton
             android:id="@+id/btnPegOne"
             android:layout_width="wrap_content"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:onClick="buttonOneChange" />
+            android:onClick="buttonOneChange"
+            app:srcCompat="@mipmap/ic_launcher_round" />
 
-        <Button
+        <ImageButton
             android:id="@+id/btnPegTwo"
             android:layout_width="wrap_content"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:onClick="buttonTwoChange" />
+            android:onClick="buttonTwoChange"
+            app:srcCompat="@mipmap/ic_launcher_round" />
 
-        <Button
+        <ImageButton
             android:id="@+id/btnPegThree"
             android:layout_width="wrap_content"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:onClick="buttonThreeChange" />
+            android:onClick="buttonThreeChange"
+            app:srcCompat="@mipmap/ic_launcher_round" />
 
-        <Button
+        <ImageButton
             android:id="@+id/btnPegFour"
             android:layout_width="wrap_content"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:onClick="buttonFourChange" />
+            android:onClick="buttonFourChange"
+            app:srcCompat="@mipmap/ic_launcher_round" />
 
         <Button
             android:id="@+id/btnSubmit"

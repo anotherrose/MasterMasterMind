@@ -7,39 +7,39 @@ import android.graphics.Color;
  */
 
 public class peg {
-    private int color;
+    private int imgColor;
     private int position;
 
     public peg (int n, int c){
         position = n;
-        color = c;
+        imgColor = c;
     }
 
     public peg(int n, String c){
         position = n;
-        color = colorWordToNumber(c);
+        imgColor = colorWordToNumber(c);
     }
 
     private int colorWordToNumber(String c) {
         switch (c){
-            case "red": return  1;
-            case "yellow": return 2;
-            case "blue": return 3;
-            case "green": return 4;
-            case "pink": return 5;
-            case "magenta": return 6;
+            case "red": return  R.drawable.pegRed;
+            case "yellow": return R.drawable.pegYellow;
+            case "blue": return R.drawable.pegBlue;
+            case "green": return R.drawable.pegGreen;
+            case "orange": return R.drawable.pegOrange;
+            case "magenta": return R.drawable.pegMagenta;
             default: return 0;
         }
     }
 
     private String colorNumberToWord(int c){
         switch (c){
-            case 1: return  "red";
-            case 2: return "yellow";
-            case 3: return "blue";
-            case 4: return "green";
-            case 5: return "pink";
-            case 6: return "magenta";
+            case R.drawable.pegRed: return  "red";
+            case R.drawable.pegYellow: return "yellow";
+            case R.drawable.pegBlue: return "blue";
+            case R.drawable.pegGreen: return "green";
+            case R.drawable.pegOrange: return "Orange";
+            case R.drawable.pegMagenta: return "magenta";
             default: return "error";
         }
     }
@@ -49,17 +49,17 @@ public class peg {
     }
 
     public int getColorNum() {
-        return color;
+        return imgColor;
     }
     public String getColorWord() {
-        return colorNumberToWord(color);
+        return colorNumberToWord(imgColor);
     }
 
     public void setColor(int color){
-        this.color=color;
+        imgColor=color;
     }
     public void setColor(String color){
-        this.color=colorWordToNumber(color);
+        imgColor=colorWordToNumber(color);
     }
 
     public void setPosition(int position) {
