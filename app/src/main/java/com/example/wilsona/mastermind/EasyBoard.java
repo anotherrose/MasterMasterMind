@@ -1,7 +1,5 @@
 package com.example.wilsona.mastermind;
 
-import android.graphics.Color;
-import android.graphics.Interpolator;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -11,7 +9,6 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 
 public class EasyBoard extends AppCompatActivity {
 
@@ -25,7 +22,7 @@ public class EasyBoard extends AppCompatActivity {
     private String[] allColors;
     private int numColors = 6;
     private int guess = 0;
-    private int imgEmpty, imgBlue, imgGreen, imgRed, imgOrange, imgYellow, imgMagenta;
+    //private int imgEmpty, imgBlue, imgGreen, imgRed, imgOrange, imgYellow, imgMagenta;
 
     ImageView imgGuessAnswerTL;
     ImageView imgGuessAnswerTR;
@@ -37,9 +34,11 @@ public class EasyBoard extends AppCompatActivity {
     ImageView imgGuessThree;
     ImageView imgGuessFour;
 
-    private ImageView[] guessDisplay;
     private int[] imgColors;
-    private ImageView[][] guessAnswers;
+    private ImageView[] guessDisplay;
+    private ImageView[] guessAnswers;
+    private ImageView[][]guessOne;
+    private ImageView[][] masterTurnHolder;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -59,28 +58,34 @@ public class EasyBoard extends AppCompatActivity {
         clrFour = 0;
 
         gameButtons = new ImageButton[]{btnPegOne, btnPegTwo,btnPegThree,btnPegFour};
-        //allColors = new String[]{"red", "yellow", "blue", "green", "pink", "magenta"};
-        imgColors = new int[]{R.drawable.pegBlue, R.drawable.pegGreen, R.drawable.pegRed, R.drawable.pegOrange, R.drawable.pegYellow, R.drawable.pegMagenta};
+
+        imgColors = new int[]{R.drawable.peg_blue, R.drawable.peg_green, R.drawable.peg_red, R.drawable.peg_orange, R.drawable.peg_yellow, R.drawable.peg_magenta};
 
         createMasterCode();
         createImages();
     }
 
-    private void createImages() {
-        ImageView imgGuessAnswerTL = (ImageView) findViewById(R.id.imgRowOneAnswerPegOne);
-        ImageView imgGuessAnswerTR = (ImageView) findViewById(R.id.imgRowOneAnswerPegTwo);
-        ImageView imgGuessAnswerBL = (ImageView) findViewById(R.id.imgRowOneAnswerPegThree);
-        ImageView imgGuessAnswerBR = (ImageView) findViewById(R.id.imgRowOneAnswerPegFour);
 
-        ImageView imgGuessOne = (ImageView) findViewById(R.id.imgRowOnePegOne);
-        ImageView imgGuessTwo = (ImageView) findViewById(R.id.imgRowOnePegTwo);
-        ImageView imgGuessThree = (ImageView) findViewById(R.id.imgRowOnePegThree);
-        ImageView imgGuessFour = (ImageView) findViewById(R.id.imgRowOnePegFour);
+
+    private void createImages() {
+        imgGuessAnswerTL = (ImageView) findViewById(R.id.imgRowOneAnswerPegOne);
+        imgGuessAnswerTR = (ImageView) findViewById(R.id.imgRowOneAnswerPegTwo);
+        imgGuessAnswerBL = (ImageView) findViewById(R.id.imgRowOneAnswerPegThree);
+        imgGuessAnswerBR = (ImageView) findViewById(R.id.imgRowOneAnswerPegFour);
+
+        imgGuessOne = (ImageView) findViewById(R.id.imgRowOnePegOne);
+        imgGuessTwo = (ImageView) findViewById(R.id.imgRowOnePegTwo);
+        imgGuessThree = (ImageView) findViewById(R.id.imgRowOnePegThree);
+        imgGuessFour = (ImageView) findViewById(R.id.imgRowOnePegFour);
 
         guessDisplay = new ImageView[]{imgGuessOne, imgGuessTwo, imgGuessThree, imgGuessFour};
+        guessAnswers = new ImageView[]{imgGuessAnswerTL, imgGuessAnswerTR,imgGuessAnswerBL, imgGuessAnswerBR};
 
-        guessAnswers = new ImageView[][]{{imgGuessAnswerTL, imgGuessAnswerTR},{imgGuessAnswerBL, imgGuessAnswerBR}};
+        masterTurnHolder = new ImageView[][]{guessAnswers,guessDisplay};
     }
+
+
+
     private void createMasterCode() {
         ArrayList<Integer> unusedColors= new ArrayList<Integer>();
         masterCode = new peg[4];
@@ -122,7 +127,7 @@ public class EasyBoard extends AppCompatActivity {
         userPegs = new peg[]{pegOne, pegTwo, pegThree, pegFour};
 
         for(int i=0; i<gameButtons.length;i++)
-            changeColor(gameButtons[i],R.drawable.pegEmpty);
+            changeColor(gameButtons[i],R.drawable.peg_empty);
 
         submit.setEnabled(false);
 
@@ -165,17 +170,17 @@ public class EasyBoard extends AppCompatActivity {
         switch (clr){
             case 0: peg.setImageResource(imgEmpty);
                 break;
-            case 1: peg.setImageResource(imgRed);
+            case R.drawable.peg_red: peg.setImageResource(imgRed);
                 break;
-            case 2: peg.setImageResource(imgYellow);
+            case R.drawable.peg_yellow: peg.setImageResource(imgYellow);
                 break;
-            case 3: peg.setImageResource(imgBlue);
+            case R.drawable.peg_blue: peg.setImageResource(imgBlue);
                 break;
-            case 4: peg.setImageResource(imgGreen);
+            case R.drawable.peg_green: peg.setImageResource(imgGreen);
                 break;
-            case 5: peg.setImageResource(imgOrange);
+            case R.drawable.peg_orange: peg.setImageResource(imgOrange);
                 break;
-            case 6: peg.setImageResource(imgMagenta);
+            case R.drawable.peg_magenta: peg.setImageResource(imgMagenta);
                 break;
             default: return;
         }

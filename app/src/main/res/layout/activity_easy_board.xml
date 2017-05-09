@@ -13,7 +13,12 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:scrollIndicators="top|bottom"
+        android:scrollbarSize="@dimen/fab_margin"
+        android:scrollbarStyle="insideInset"
+        android:scrollbarThumbVertical="@android:drawable/alert_dark_frame"
+        android:scrollbars="vertical">
 
         <TableRow
             android:id="@+id/rowGuessOne"
@@ -73,40 +78,40 @@
                 android:id="@+id/imgRowOnePegOne"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
-                android:layout_marginStart="10dp"
-                android:layout_marginRight="10dp"
                 android:layout_marginEnd="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginStart="10dp"
                 app:srcCompat="@mipmap/ic_launcher_round" />
 
             <ImageView
                 android:id="@+id/imgRowOnePegTwo"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
-                android:layout_marginStart="10dp"
-                android:layout_marginRight="10dp"
                 android:layout_marginEnd="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginStart="10dp"
                 app:srcCompat="@mipmap/ic_launcher_round" />
 
             <ImageView
                 android:id="@+id/imgRowOnePegThree"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
-                android:layout_marginStart="10dp"
-                android:layout_marginRight="10dp"
                 android:layout_marginEnd="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginStart="10dp"
                 app:srcCompat="@mipmap/ic_launcher_round" />
 
             <ImageView
                 android:id="@+id/imgRowOnePegFour"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
-                android:layout_marginStart="10dp"
-                android:layout_marginRight="10dp"
                 android:layout_marginEnd="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginStart="10dp"
                 app:srcCompat="@mipmap/ic_launcher_round" />
 
         </TableRow>
@@ -169,10 +174,10 @@
                 android:id="@+id/imgRowTwoPegOne"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
-                android:layout_marginStart="10dp"
-                android:layout_marginRight="10dp"
                 android:layout_marginEnd="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginStart="10dp"
                 app:srcCompat="@mipmap/ic_launcher_round" />
 
             <ImageView
@@ -399,7 +404,89 @@
         <TableRow
             android:id="@+id/rowGuessFive"
             android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+            android:layout_height="match_parent">
+
+            <TableLayout
+                android:id="@+id/tblRowFiveAnswers"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_marginLeft="10dp"
+                android:foregroundGravity="center_vertical|center_horizontal"
+                android:gravity="center_vertical|fill_horizontal"
+                android:isScrollContainer="false">
+
+                <TableRow
+                    android:id="@+id/TblAnswerRowFiveTopRow"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:id="@+id/imgRowFourAnswerPegOne"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:srcCompat="@mipmap/ic_launcher_round" />
+
+                    <ImageView
+                        android:id="@+id/imgRowFiveAnswerPegTwo"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:srcCompat="@mipmap/ic_launcher_round" />
+                </TableRow>
+
+                <TableRow
+                    android:id="@+id/TblAnswerRowFiveBotRow"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:id="@+id/imgRowFiveAnswerPegThree"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:srcCompat="@mipmap/ic_launcher_round" />
+
+                    <ImageView
+                        android:id="@+id/imgRowFiveAnswerPegFour"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:srcCompat="@mipmap/ic_launcher_round" />
+
+                </TableRow>
+
+            </TableLayout>
+
+            <ImageView
+                android:id="@+id/imgRowFivePegOne"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:srcCompat="@mipmap/ic_launcher_round" />
+
+            <ImageView
+                android:id="@+id/imgRowFivePegTwo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:srcCompat="@mipmap/ic_launcher_round" />
+
+            <ImageView
+                android:id="@+id/imgRowFivePegThree"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginStart="10dp"
+                app:srcCompat="@mipmap/ic_launcher_round" />
+
+            <ImageView
+                android:id="@+id/imgRowFivePegFour"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginStart="10dp"
+                app:srcCompat="@mipmap/ic_launcher_round" />
+
+        </TableRow>
 
         <TableRow
             android:id="@+id/rowGuessSix"

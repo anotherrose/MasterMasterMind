@@ -1,7 +1,5 @@
 package com.example.wilsona.mastermind;
 
-import android.graphics.Color;
-
 /**
  * Created by wilsona on 4/26/2017.
  */
@@ -22,24 +20,24 @@ public class peg {
 
     private int colorWordToNumber(String c) {
         switch (c){
-            case "red": return  R.drawable.pegRed;
-            case "yellow": return R.drawable.pegYellow;
-            case "blue": return R.drawable.pegBlue;
-            case "green": return R.drawable.pegGreen;
-            case "orange": return R.drawable.pegOrange;
-            case "magenta": return R.drawable.pegMagenta;
+            case "red": return  R.drawable.peg_red;
+            case "yellow": return R.drawable.peg_yellow;
+            case "blue": return R.drawable.peg_blue;
+            case "green": return R.drawable.peg_green;
+            case "orange": return R.drawable.peg_orange;
+            case "magenta": return R.drawable.peg_magenta;
             default: return 0;
         }
     }
 
     private String colorNumberToWord(int c){
         switch (c){
-            case R.drawable.pegRed: return  "red";
-            case R.drawable.pegYellow: return "yellow";
-            case R.drawable.pegBlue: return "blue";
-            case R.drawable.pegGreen: return "green";
-            case R.drawable.pegOrange: return "Orange";
-            case R.drawable.pegMagenta: return "magenta";
+            case R.drawable.peg_red: return  "red";
+            case R.drawable.peg_yellow: return "yellow";
+            case R.drawable.peg_blue: return "blue";
+            case R.drawable.peg_green: return "green";
+            case R.drawable.peg_orange: return "Orange";
+            case R.drawable.peg_magenta: return "magenta";
             default: return "error";
         }
     }
