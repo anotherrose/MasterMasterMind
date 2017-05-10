@@ -17,8 +17,17 @@ public class Guess {
     }
 
     private void setGuesses(ImageView gOne, ImageView gTwo, ImageView gThree, ImageView gFour) {
+        guesses[0]=gOne;
+        guesses[1]=gTwo;
+        guesses[2]=gThree;
+        guesses[3]=gFour;
+
     }
 
     private void setAnswers(ImageView aOne, ImageView aTwo, ImageView aThree, ImageView aFour) {
+        answers[0]=aOne;
+        answers[1]=aTwo;
+        answers[2]=aThree;
+        answers[3]=aFour;
     }
 }

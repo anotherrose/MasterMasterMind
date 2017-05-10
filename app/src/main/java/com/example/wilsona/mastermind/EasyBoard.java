@@ -35,10 +35,7 @@ public class EasyBoard extends AppCompatActivity {
     ImageView imgGuessFour;
 
     private int[] imgColors;
-    private ImageView[] guessDisplay;
-    private ImageView[] guessAnswers;
-    private ImageView[][]guessOne;
-    private ImageView[][] masterTurnHolder;
+    private Guess[] masterRowHolder = new Guess[3];
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -68,7 +65,7 @@ public class EasyBoard extends AppCompatActivity {
 
 
     private void createImages() {
-        imgGuessAnswerTL = (ImageView) findViewById(R.id.imgRowOneAnswerPegOne);
+        masterRowHolder[0] = (ImageView) findViewById(R.id.imgRowOneAnswerPegOne);
         imgGuessAnswerTR = (ImageView) findViewById(R.id.imgRowOneAnswerPegTwo);
         imgGuessAnswerBL = (ImageView) findViewById(R.id.imgRowOneAnswerPegThree);
         imgGuessAnswerBR = (ImageView) findViewById(R.id.imgRowOneAnswerPegFour);
