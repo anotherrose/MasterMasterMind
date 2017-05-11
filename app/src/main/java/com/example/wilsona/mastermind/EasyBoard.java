@@ -9,6 +9,7 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 
 import java.util.ArrayList;
+import java.util.concurrent.ExecutionException;
 
 public class EasyBoard extends AppCompatActivity {
 
@@ -19,23 +20,12 @@ public class EasyBoard extends AppCompatActivity {
     private ImageButton[] gameButtons;
     private peg[] userPegs;
     private peg[] masterCode;
-    private String[] allColors;
     private int numColors = 6;
     private int guess = 0;
     //private int imgEmpty, imgBlue, imgGreen, imgRed, imgOrange, imgYellow, imgMagenta;
 
-    ImageView imgGuessAnswerTL;
-    ImageView imgGuessAnswerTR;
-    ImageView imgGuessAnswerBL;
-    ImageView imgGuessAnswerBR;
-
-    ImageView imgGuessOne;
-    ImageView imgGuessTwo;
-    ImageView imgGuessThree;
-    ImageView imgGuessFour;
-
     private int[] imgColors;
-    private Guess[] masterRowHolder = new Guess[3];
+    private Guess[] masterRowHolder = new Guess[4];
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,29 +46,28 @@ public class EasyBoard extends AppCompatActivity {
 
         gameButtons = new ImageButton[]{btnPegOne, btnPegTwo,btnPegThree,btnPegFour};
 
-        imgColors = new int[]{R.drawable.peg_blue, R.drawable.peg_green, R.drawable.peg_red, R.drawable.peg_orange, R.drawable.peg_yellow, R.drawable.peg_magenta};
+        imgColors = new int[]{R.drawable.peg_red, R.drawable.peg_yellow, R.drawable.peg_blue, R.drawable.peg_green, R.drawable.peg_orange, R.drawable.peg_magenta};
+
 
         createMasterCode();
+
         createImages();
     }
 
 
 
     private void createImages() {
-        masterRowHolder[0] = (ImageView) findViewById(R.id.imgRowOneAnswerPegOne);
-        imgGuessAnswerTR = (ImageView) findViewById(R.id.imgRowOneAnswerPegTwo);
-        imgGuessAnswerBL = (ImageView) findViewById(R.id.imgRowOneAnswerPegThree);
-        imgGuessAnswerBR = (ImageView) findViewById(R.id.imgRowOneAnswerPegFour);
+        masterRowHolder[0] = new Guess((ImageView) findViewById(R.id.imgRowOneAnswerPegOne),(ImageView) findViewById(R.id.imgRowOneAnswerPegTwo), (ImageView) findViewById(R.id.imgRowOneAnswerPegThree), (ImageView) findViewById(R.id.imgRowOneAnswerPegFour),
+                (ImageView) findViewById(R.id.imgRowOnePegOne), (ImageView) findViewById(R.id.imgRowOnePegTwo), (ImageView) findViewById(R.id.imgRowOnePegThree), (ImageView) findViewById(R.id.imgRowOnePegFour));
 
-        imgGuessOne = (ImageView) findViewById(R.id.imgRowOnePegOne);
-        imgGuessTwo = (ImageView) findViewById(R.id.imgRowOnePegTwo);
-        imgGuessThree = (ImageView) findViewById(R.id.imgRowOnePegThree);
-        imgGuessFour = (ImageView) findViewById(R.id.imgRowOnePegFour);
+        masterRowHolder[1] = new Guess((ImageView) findViewById(R.id.imgRowTwoAnswerPegOne),(ImageView) findViewById(R.id.imgRowTwoAnswerPegTwo), (ImageView) findViewById(R.id.imgRowTwoAnswerPegThree), (ImageView) findViewById(R.id.imgRowTwoAnswerPegFour),
+                (ImageView) findViewById(R.id.imgRowTwoPegOne), (ImageView) findViewById(R.id.imgRowTwoPegTwo), (ImageView) findViewById(R.id.imgRowTwoPegThree), (ImageView) findViewById(R.id.imgRowTwoPegFour));
 
-        guessDisplay = new ImageView[]{imgGuessOne, imgGuessTwo, imgGuessThree, imgGuessFour};
-        guessAnswers = new ImageView[]{imgGuessAnswerTL, imgGuessAnswerTR,imgGuessAnswerBL, imgGuessAnswerBR};
+        masterRowHolder[2] = new Guess((ImageView) findViewById(R.id.imgRowThreeAnswerPegOne),(ImageView) findViewById(R.id.imgRowThreeAnswerPegTwo), (ImageView) findViewById(R.id.imgRowThreeAnswerPegThree), (ImageView) findViewById(R.id.imgRowThreeAnswerPegFour),
+                (ImageView) findViewById(R.id.imgRowThreePegOne), (ImageView) findViewById(R.id.imgRowThreePegTwo), (ImageView) findViewById(R.id.imgRowThreePegThree), (ImageView) findViewById(R.id.imgRowThreePegFour));
 
-        masterTurnHolder = new ImageView[][]{guessAnswers,guessDisplay};
+        masterRowHolder[3] = new Guess((ImageView) findViewById(R.id.imgRowFourAnswerPegOne),(ImageView) findViewById(R.id.imgRowFourAnswerPegTwo), (ImageView) findViewById(R.id.imgRowFourAnswerPegThree), (ImageView) findViewById(R.id.imgRowFourAnswerPegFour),
+                (ImageView) findViewById(R.id.imgRowFourPegOne), (ImageView) findViewById(R.id.imgRowFourPegTwo), (ImageView) findViewById(R.id.imgRowFourPegThree), (ImageView) findViewById(R.id.imgRowFourPegFour));
     }
 
 
@@ -89,12 +78,12 @@ public class EasyBoard extends AppCompatActivity {
         int color;
         int pos=0;
 
-        for(int i=1; i<=allColors.length; i++){
-            unusedColors.add(imgColors[i-1]);
+        for(int i=0; i<imgColors.length; i++){
+            unusedColors.add(imgColors[i]);
         }
 
         do {
-            color=imgColors[(int) ((Math.random()*6)+1)];
+            color=imgColors[(int) ((Math.random()*5)+1)];
             if (unusedColors.contains(color)){
                 masterCode[pos]= new peg(pos,color);
                 unusedColors.remove(unusedColors.indexOf(color));
@@ -124,7 +113,7 @@ public class EasyBoard extends AppCompatActivity {
         userPegs = new peg[]{pegOne, pegTwo, pegThree, pegFour};
 
         for(int i=0; i<gameButtons.length;i++)
-            changeColor(gameButtons[i],R.drawable.peg_empty);
+            changeColor(gameButtons[i],0);
 
         submit.setEnabled(false);
 
@@ -132,7 +121,7 @@ public class EasyBoard extends AppCompatActivity {
 
 
     public void buttonOneChange(View view) {
-        if(clrOne>=allColors.length)
+        if(clrOne>=imgColors.length)
             clrOne=1;
         else
             clrOne++;
@@ -140,7 +129,7 @@ public class EasyBoard extends AppCompatActivity {
     }
 
     public void buttonTwoChange(View view) {
-        if(clrTwo>=allColors.length)
+        if(clrTwo>=imgColors.length)
             clrTwo=1;
         else
             clrTwo++;
@@ -148,7 +137,7 @@ public class EasyBoard extends AppCompatActivity {
     }
 
     public void buttonThreeChange(View view) {
-        if(clrThree>=allColors.length)
+        if(clrThree>=imgColors.length)
             clrThree=1;
         else
             clrThree++;
@@ -156,7 +145,7 @@ public class EasyBoard extends AppCompatActivity {
     }
 
     public void buttonFourChange(View view) {
-        if(clrFour>=allColors.length)
+        if(clrFour>=imgColors.length)
             clrFour=1;
         else
             clrFour++;
@@ -165,19 +154,19 @@ public class EasyBoard extends AppCompatActivity {
 
     private void changeColor(ImageButton peg, int clr) {
         switch (clr){
-            case 0: peg.setImageResource(imgEmpty);
+            case 0: peg.setImageResource(R.drawable.peg_empty);
                 break;
-            case R.drawable.peg_red: peg.setImageResource(imgRed);
+            case 1: peg.setImageResource(imgColors[0]);
                 break;
-            case R.drawable.peg_yellow: peg.setImageResource(imgYellow);
+            case 2: peg.setImageResource(imgColors[1]);
                 break;
-            case R.drawable.peg_blue: peg.setImageResource(imgBlue);
+            case 3: peg.setImageResource(imgColors[2]);
                 break;
-            case R.drawable.peg_green: peg.setImageResource(imgGreen);
+            case 4: peg.setImageResource(imgColors[3]);
                 break;
-            case R.drawable.peg_orange: peg.setImageResource(imgOrange);
+            case 5: peg.setImageResource(imgColors[4]);
                 break;
-            case R.drawable.peg_magenta: peg.setImageResource(imgMagenta);
+            case 6: peg.setImageResource(imgColors[5]);
                 break;
             default: return;
         }

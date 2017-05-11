@@ -8,8 +8,8 @@ import android.widget.ImageView;
  */
 
 public class Guess {
-    private ImageView[] answers;
-    private ImageView[] guesses;
+    private ImageView[] answers = new ImageView[4];
+    private ImageView[] guesses = new ImageView[4];
 
     public Guess (ImageView aOne, ImageView aTwo, ImageView aThree, ImageView aFour, ImageView gOne, ImageView gTwo, ImageView gThree, ImageView gFour){
         setAnswers(aOne,aTwo,aThree,aFour);
@@ -29,5 +29,13 @@ public class Guess {
         answers[1]=aTwo;
         answers[2]=aThree;
         answers[3]=aFour;
+    }
+
+    public ImageView[] getAnswers() {
+        return answers;
+    }
+
+    public ImageView[] getGuesses() {
+        return guesses;
     }
 }
