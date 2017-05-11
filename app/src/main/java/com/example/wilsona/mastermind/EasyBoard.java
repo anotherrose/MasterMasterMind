@@ -14,16 +14,13 @@ import java.util.concurrent.ExecutionException;
 public class EasyBoard extends AppCompatActivity {
 
     private int clrOne, clrTwo, clrThree, clrFour;
-    private int[] userColors;
     private Button submit;
     private ImageButton btnPegOne, btnPegTwo, btnPegThree, btnPegFour;
     private ImageButton[] gameButtons;
     private peg[] userPegs;
     private peg[] masterCode;
-    private int numColors = 6;
     private int guess = 0;
     //private int imgEmpty, imgBlue, imgGreen, imgRed, imgOrange, imgYellow, imgMagenta;
-
     private int[] imgColors;
     private Guess[] masterRowHolder = new Guess[4];
 
@@ -73,7 +70,7 @@ public class EasyBoard extends AppCompatActivity {
 
 
     private void createMasterCode() {
-        ArrayList<Integer> unusedColors= new ArrayList<Integer>();
+        ArrayList<Integer> unusedColors= new ArrayList<>();
         masterCode = new peg[4];
         int color;
         int pos=0;
@@ -109,14 +106,12 @@ public class EasyBoard extends AppCompatActivity {
         clrThree=0;
         clrFour=0;
 
-        userColors = new int[]{clrOne, clrTwo, clrThree, clrFour};
         userPegs = new peg[]{pegOne, pegTwo, pegThree, pegFour};
 
         for(int i=0; i<gameButtons.length;i++)
             changeColor(gameButtons[i],0);
 
         submit.setEnabled(false);
-
     }
 
 

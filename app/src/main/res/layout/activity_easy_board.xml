@@ -20,6 +20,7 @@
         android:scrollbarThumbVertical="@android:drawable/alert_dark_frame"
         android:scrollbars="vertical">
 
+
         <TableRow
             android:id="@+id/rowGuessOne"
             android:layout_width="match_parent"
@@ -421,7 +422,7 @@
                     android:layout_height="match_parent">
 
                     <ImageView
-                        android:id="@+id/imgRowFourAnswerPegOne"
+                        android:id="@+id/imgRowFiveAnswerPegOne"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         app:srcCompat="@mipmap/ic_launcher_round" />
@@ -499,6 +500,7 @@
             android:layout_height="match_parent">
 
         </TableRow>
+
     </TableLayout>
 
     <LinearLayout
@@ -516,7 +518,9 @@
             android:layout_width="70dp"
             android:layout_height="70dp"
             android:layout_weight="1"
+            android:background="@android:color/background_light"
             android:onClick="buttonOneChange"
+            android:scaleType="fitCenter"
             app:srcCompat="@mipmap/ic_launcher_round" />
 
         <ImageButton
@@ -524,7 +528,9 @@
             android:layout_width="70dp"
             android:layout_height="70dp"
             android:layout_weight="1"
+            android:background="@android:color/background_light"
             android:onClick="buttonTwoChange"
+            android:scaleType="fitCenter"
             app:srcCompat="@mipmap/ic_launcher_round" />
 
         <ImageButton
@@ -532,7 +538,9 @@
             android:layout_width="70dp"
             android:layout_height="70dp"
             android:layout_weight="1"
+            android:background="@android:color/background_light"
             android:onClick="buttonThreeChange"
+            android:scaleType="fitCenter"
             app:srcCompat="@mipmap/ic_launcher_round" />
 
         <ImageButton
@@ -540,7 +548,9 @@
             android:layout_width="70dp"
             android:layout_height="70dp"
             android:layout_weight="1"
+            android:background="@android:color/background_light"
             android:onClick="buttonFourChange"
+            android:scaleType="fitCenter"
             app:srcCompat="@mipmap/ic_launcher_round" />
 
         <Button
