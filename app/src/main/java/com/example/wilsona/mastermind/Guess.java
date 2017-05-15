@@ -39,3 +39,17 @@ public class Guess {
         return guesses;
     }
 }
+
+/*
+string n = "name";
+int n = 24;
+name+1=25;
+
+for (int i=0; i>5; i++){
+ int n+i = i;
+ }
+
+ name1 = i
+ name2 = i+1
+ ...
+ */

@@ -6,512 +6,654 @@
     android:layout_height="match_parent"
     tools:context="com.example.wilsona.mastermind.EasyBoard">
 
-    <TableLayout
-        android:id="@+id/tableLayout"
-        android:layout_width="match_parent"
-        android:layout_height="400dp"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:orientation="vertical"
-        android:scrollIndicators="top|bottom"
-        android:scrollbarSize="@dimen/fab_margin"
-        android:scrollbarStyle="insideInset"
-        android:scrollbarThumbVertical="@android:drawable/alert_dark_frame"
-        android:scrollbars="vertical">
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="500dp"
+        android:layout_weight="1"
+        android:scrollbars="none">
 
-
-        <TableRow
-            android:id="@+id/rowGuessOne"
+        <TableLayout
+            android:id="@+id/tableLayout"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:gravity="center_vertical|center_horizontal">
+            android:layout_height="400dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:isScrollContainer="true"
+            android:orientation="vertical">
 
-            <TableLayout
-                android:id="@+id/tblRowOneAnswers"
+
+            <TableRow
+                android:id="@+id/rowGuessOne"
                 android:layout_width="match_parent"
-                android:layout_height="100dp"
-                android:layout_marginLeft="10dp"
-                android:foregroundGravity="center_vertical|center_horizontal"
-                android:gravity="center_vertical|fill_horizontal"
-                android:isScrollContainer="false">
+                android:layout_height="match_parent"
+                android:gravity="center_vertical|center_horizontal">
+
+                <TableLayout
+                    android:id="@+id/tblRowOneAnswers"
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:layout_marginLeft="10dp"
+                    android:foregroundGravity="center_vertical|center_horizontal"
+                    android:gravity="center_vertical|fill_horizontal"
+                    android:isScrollContainer="false">
+
+                    <TableRow
+                        android:id="@+id/TblAnswerRowOneTopRow"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <ImageView
+                            android:id="@+id/imgRowOneAnswerPegOne"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            app:srcCompat="@mipmap/ic_launcher_round" />
+
+                        <ImageView
+                            android:id="@+id/imgRowOneAnswerPegTwo"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            app:srcCompat="@mipmap/ic_launcher_round" />
+                    </TableRow>
+
+                    <TableRow
+                        android:id="@+id/TblAnswerRowOneBotRow"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <ImageView
+                            android:id="@+id/imgRowOneAnswerPegThree"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            app:srcCompat="@mipmap/ic_launcher_round" />
+
+                        <ImageView
+                            android:id="@+id/imgRowOneAnswerPegFour"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            app:srcCompat="@mipmap/ic_launcher_round" />
+
+                    </TableRow>
+
+                </TableLayout>
+
+                <ImageView
+                    android:id="@+id/imgRowOnePegOne"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginStart="10dp"
+                    app:srcCompat="@mipmap/ic_launcher_round" />
+
+                <ImageView
+                    android:id="@+id/imgRowOnePegTwo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginStart="10dp"
+                    app:srcCompat="@mipmap/ic_launcher_round" />
+
+                <ImageView
+                    android:id="@+id/imgRowOnePegThree"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginStart="10dp"
+                    app:srcCompat="@mipmap/ic_launcher_round" />
+
+                <ImageView
+                    android:id="@+id/imgRowOnePegFour"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginStart="10dp"
+                    app:srcCompat="@mipmap/ic_launcher_round" />
+
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/rowGuessTwo"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical|center_horizontal">
+
+                <TableLayout
+                    android:id="@+id/tblRowTwoAnswers"
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:layout_marginLeft="10dp"
+                    android:foregroundGravity="center_vertical|center_horizontal"
+                    android:gravity="center_vertical|fill_horizontal"
+                    android:isScrollContainer="false">
+
+                    <TableRow
+                        android:id="@+id/TblAnswerRowTwoTopRow"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <ImageView
+                            android:id="@+id/imgRowTwoAnswerPegOne"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            app:srcCompat="@mipmap/ic_launcher_round" />
+
+                        <ImageView
+                            android:id="@+id/imgRowTwoAnswerPegTwo"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            app:srcCompat="@mipmap/ic_launcher_round" />
+                    </TableRow>
+
+                    <TableRow
+                        android:id="@+id/TblAnswerTwoBotRow"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <ImageView
+                            android:id="@+id/imgRowTwoAnswerPegThree"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            app:srcCompat="@mipmap/ic_launcher_round" />
+
+                        <ImageView
+                            android:id="@+id/imgRowTwoAnswerPegFour"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            app:srcCompat="@mipmap/ic_launcher_round" />
+
+                    </TableRow>
+
+                </TableLayout>
+
+                <ImageView
+                    android:id="@+id/imgRowTwoPegOne"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginStart="10dp"
+                    app:srcCompat="@mipmap/ic_launcher_round" />
+
+                <ImageView
+                    android:id="@+id/imgRowTwoPegTwo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginStart="10dp"
+                    app:srcCompat="@mipmap/ic_launcher_round" />
+
+                <ImageView
+                    android:id="@+id/imgRowTwoPegThree"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginStart="10dp"
+                    app:srcCompat="@mipmap/ic_launcher_round" />
+
+                <ImageView
+                    android:id="@+id/imgRowTwoPegFour"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginStart="10dp"
+                    app:srcCompat="@mipmap/ic_launcher_round" />
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/rowGuessThree"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical|center_horizontal">
+
+                <TableLayout
+                    android:id="@+id/tblRowThreeAnswers"
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:layout_marginLeft="10dp"
+                    android:foregroundGravity="center_vertical|center_horizontal"
+                    android:gravity="center_vertical|fill_horizontal"
+                    android:isScrollContainer="false">
+
+                    <TableRow
+                        android:id="@+id/TblAnswerRowThreeTopRow"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <ImageView
+                            android:id="@+id/imgRowThreeAnswerPegOne"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            app:srcCompat="@mipmap/ic_launcher_round" />
+
+                        <ImageView
+                            android:id="@+id/imgRowThreeAnswerPegTwo"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            app:srcCompat="@mipmap/ic_launcher_round" />
+                    </TableRow>
+
+                    <TableRow
+                        android:id="@+id/TblAnswerThreeBotRow"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <ImageView
+                            android:id="@+id/imgRowThreeAnswerPegThree"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            app:srcCompat="@mipmap/ic_launcher_round" />
+
+                        <ImageView
+                            android:id="@+id/imgRowThreeAnswerPegFour"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            app:srcCompat="@mipmap/ic_launcher_round" />
+
+                    </TableRow>
+
+                </TableLayout>
+
+                <ImageView
+                    android:id="@+id/imgRowThreePegOne"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginStart="10dp"
+                    app:srcCompat="@mipmap/ic_launcher_round" />
+
+                <ImageView
+                    android:id="@+id/imgRowThreePegTwo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginStart="10dp"
+                    app:srcCompat="@mipmap/ic_launcher_round" />
+
+                <ImageView
+                    android:id="@+id/imgRowThreePegThree"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginStart="10dp"
+                    app:srcCompat="@mipmap/ic_launcher_round" />
+
+                <ImageView
+                    android:id="@+id/imgRowThreePegFour"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginStart="10dp"
+                    app:srcCompat="@mipmap/ic_launcher_round" />
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/rowGuessFour"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical|center_horizontal">
+
+                <TableLayout
+                    android:id="@+id/tblRowFourAnswers"
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:layout_marginLeft="10dp"
+                    android:foregroundGravity="center_vertical|center_horizontal"
+                    android:gravity="center_vertical|fill_horizontal"
+                    android:isScrollContainer="false">
+
+                    <TableRow
+                        android:id="@+id/TblAnswerRowFourTopRow"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <ImageView
+                            android:id="@+id/imgRowFourAnswerPegOne"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            app:srcCompat="@mipmap/ic_launcher_round" />
+
+                        <ImageView
+                            android:id="@+id/imgRowFourAnswerPegTwo"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            app:srcCompat="@mipmap/ic_launcher_round" />
+                    </TableRow>
+
+                    <TableRow
+                        android:id="@+id/TblAnswerRowFourBotRow"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <ImageView
+                            android:id="@+id/imgRowFourAnswerPegThree"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            app:srcCompat="@mipmap/ic_launcher_round" />
+
+                        <ImageView
+                            android:id="@+id/imgRowFourAnswerPegFour"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            app:srcCompat="@mipmap/ic_launcher_round" />
+
+                    </TableRow>
+
+                </TableLayout>
+
+                <ImageView
+                    android:id="@+id/imgRowFourPegOne"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginStart="10dp"
+                    app:srcCompat="@mipmap/ic_launcher_round" />
+
+                <ImageView
+                    android:id="@+id/imgRowFourPegTwo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginStart="10dp"
+                    app:srcCompat="@mipmap/ic_launcher_round" />
+
+                <ImageView
+                    android:id="@+id/imgRowFourPegThree"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginStart="10dp"
+                    app:srcCompat="@mipmap/ic_launcher_round" />
+
+                <ImageView
+                    android:id="@+id/imgRowFourPegFour"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginStart="10dp"
+                    app:srcCompat="@mipmap/ic_launcher_round" />
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/rowGuessFive"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical|center_horizontal">
+
+                <TableLayout
+                    android:id="@+id/tblRowFiveAnswers"
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:layout_marginLeft="10dp"
+                    android:foregroundGravity="center_vertical|center_horizontal"
+                    android:gravity="center_vertical|fill_horizontal"
+                    android:isScrollContainer="false">
+
+                    <TableRow
+                        android:id="@+id/TblAnswerRowFiveTopRow"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <ImageView
+                            android:id="@+id/imgRowFiveAnswerPegOne"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            app:srcCompat="@mipmap/ic_launcher_round" />
+
+                        <ImageView
+                            android:id="@+id/imgRowFiveAnswerPegTwo"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            app:srcCompat="@mipmap/ic_launcher_round" />
+                    </TableRow>
+
+                    <TableRow
+                        android:id="@+id/TblAnswerRowFiveBotRow"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <ImageView
+                            android:id="@+id/imgRowFiveAnswerPegThree"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            app:srcCompat="@mipmap/ic_launcher_round" />
+
+                        <ImageView
+                            android:id="@+id/imgRowFiveAnswerPegFour"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            app:srcCompat="@mipmap/ic_launcher_round" />
+
+                    </TableRow>
+
+                </TableLayout>
+
+
+                <ImageView
+                    android:id="@+id/imgRowFivePegOne"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@mipmap/ic_launcher_round" />
+
+                <ImageView
+                    android:id="@+id/imgRowFivePegTwo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@mipmap/ic_launcher_round" />
+
+                <ImageView
+                    android:id="@+id/imgRowFivePegThree"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginStart="10dp"
+                    app:srcCompat="@mipmap/ic_launcher_round" />
+
+                <ImageView
+                    android:id="@+id/imgRowFivePegFour"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginStart="10dp"
+                    app:srcCompat="@mipmap/ic_launcher_round" />
+
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/rowGuessSix"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical|center_horizontal">
+
+                <TableLayout
+                    android:id="@+id/tblRowSixAnswers"
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:layout_marginLeft="10dp"
+                    android:foregroundGravity="center_vertical|center_horizontal"
+                    android:gravity="center_vertical|fill_horizontal"
+                    android:isScrollContainer="false">
+
+                    <TableRow
+                        android:id="@+id/TblAnswerRowSixTopRow"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <ImageView
+                            android:id="@+id/imgRowSixAnswerPegOne"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            app:srcCompat="@mipmap/ic_launcher_round" />
+
+                        <ImageView
+                            android:id="@+id/imgRowSixAnswerPegTwo"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            app:srcCompat="@mipmap/ic_launcher_round" />
+                    </TableRow>
+
+                    <TableRow
+                        android:id="@+id/TblAnswerRowSixBotRow"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <ImageView
+                            android:id="@+id/imgRowSixAnswerPegThree"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            app:srcCompat="@mipmap/ic_launcher_round" />
+
+                        <ImageView
+                            android:id="@+id/imgRowSixAnswerPegFour"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            app:srcCompat="@mipmap/ic_launcher_round" />
+
+                    </TableRow>
+
+                </TableLayout>
+
+                <ImageView
+                    android:id="@+id/imgRowSixPegOne"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@mipmap/ic_launcher_round" />
+
+                <ImageView
+                    android:id="@+id/imgRowSixPegTwo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@mipmap/ic_launcher_round" />
+
+                <ImageView
+                    android:id="@+id/imgRowSixPegThree"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@mipmap/ic_launcher_round" />
+
+                <ImageView
+                    android:id="@+id/imgRowSixPegFour"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@mipmap/ic_launcher_round" />
+
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/rowGuessSeven"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical|center_horizontal">
 
                 <TableRow
-                    android:id="@+id/TblAnswerRowOneTopRow"
+                    android:id="@+id/TblAnswerRowSevenTopRow"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent">
 
                     <ImageView
-                        android:id="@+id/imgRowOneAnswerPegOne"
+                        android:id="@+id/imgRowSevenAnswerPegOne"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         app:srcCompat="@mipmap/ic_launcher_round" />
 
                     <ImageView
-                        android:id="@+id/imgRowOneAnswerPegTwo"
+                        android:id="@+id/imgRowSevenAnswerPegTwo"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         app:srcCompat="@mipmap/ic_launcher_round" />
                 </TableRow>
 
                 <TableRow
-                    android:id="@+id/TblAnswerRowOneBotRow"
+                    android:id="@+id/TblAnswerRowSevenBotRow"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent">
 
                     <ImageView
-                        android:id="@+id/imgRowOneAnswerPegThree"
+                        android:id="@+id/imgRowSevenAnswerPegThree"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         app:srcCompat="@mipmap/ic_launcher_round" />
 
                     <ImageView
-                        android:id="@+id/imgRowOneAnswerPegFour"
+                        android:id="@+id/imgRowSevenAnswerPegFour"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         app:srcCompat="@mipmap/ic_launcher_round" />
 
                 </TableRow>
 
-            </TableLayout>
-
-            <ImageView
-                android:id="@+id/imgRowOnePegOne"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="10dp"
-                android:layout_marginLeft="10dp"
-                android:layout_marginRight="10dp"
-                android:layout_marginStart="10dp"
-                app:srcCompat="@mipmap/ic_launcher_round" />
-
-            <ImageView
-                android:id="@+id/imgRowOnePegTwo"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="10dp"
-                android:layout_marginLeft="10dp"
-                android:layout_marginRight="10dp"
-                android:layout_marginStart="10dp"
-                app:srcCompat="@mipmap/ic_launcher_round" />
-
-            <ImageView
-                android:id="@+id/imgRowOnePegThree"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="10dp"
-                android:layout_marginLeft="10dp"
-                android:layout_marginRight="10dp"
-                android:layout_marginStart="10dp"
-                app:srcCompat="@mipmap/ic_launcher_round" />
-
-            <ImageView
-                android:id="@+id/imgRowOnePegFour"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="10dp"
-                android:layout_marginLeft="10dp"
-                android:layout_marginRight="10dp"
-                android:layout_marginStart="10dp"
-                app:srcCompat="@mipmap/ic_launcher_round" />
-
-        </TableRow>
-
-        <TableRow
-            android:id="@+id/rowGuessTwo"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:gravity="center_vertical|center_horizontal">
-
-            <TableLayout
-                android:id="@+id/tblRowTwoAnswers"
-                android:layout_width="match_parent"
-                android:layout_height="100dp"
-                android:layout_marginLeft="10dp"
-                android:foregroundGravity="center_vertical|center_horizontal"
-                android:gravity="center_vertical|fill_horizontal"
-                android:isScrollContainer="false">
-
-                <TableRow
-                    android:id="@+id/TblAnswerRowTwoTopRow"
+                <ImageView
+                    android:id="@+id/imgRowSevenPegOne"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent">
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@mipmap/ic_launcher_round" />
 
-                    <ImageView
-                        android:id="@+id/imgRowTwoAnswerPegOne"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        app:srcCompat="@mipmap/ic_launcher_round" />
+                <ImageView
+                    android:id="@+id/imgRowSevenPegOne"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@mipmap/ic_launcher_round" />
 
-                    <ImageView
-                        android:id="@+id/imgRowTwoAnswerPegTwo"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        app:srcCompat="@mipmap/ic_launcher_round" />
-                </TableRow>
-
-                <TableRow
-                    android:id="@+id/TblAnswerTwoBotRow"
+                <ImageView
+                    android:id="@+id/imgRowSevenPegOne"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent">
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@mipmap/ic_launcher_round" />
 
-                    <ImageView
-                        android:id="@+id/imgRowTwoAnswerPegThree"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        app:srcCompat="@mipmap/ic_launcher_round" />
+                <ImageView
+                    android:id="@+id/imgRowSevenPegOne"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@mipmap/ic_launcher_round" />
 
-                    <ImageView
-                        android:id="@+id/imgRowTwoAnswerPegFour"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        app:srcCompat="@mipmap/ic_launcher_round" />
+            </TableRow>
 
-                </TableRow>
-
-            </TableLayout>
-
-            <ImageView
-                android:id="@+id/imgRowTwoPegOne"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="10dp"
-                android:layout_marginLeft="10dp"
-                android:layout_marginRight="10dp"
-                android:layout_marginStart="10dp"
-                app:srcCompat="@mipmap/ic_launcher_round" />
-
-            <ImageView
-                android:id="@+id/imgRowTwoPegTwo"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="10dp"
-                android:layout_marginLeft="10dp"
-                android:layout_marginRight="10dp"
-                android:layout_marginStart="10dp"
-                app:srcCompat="@mipmap/ic_launcher_round" />
-
-            <ImageView
-                android:id="@+id/imgRowTwoPegThree"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="10dp"
-                android:layout_marginLeft="10dp"
-                android:layout_marginRight="10dp"
-                android:layout_marginStart="10dp"
-                app:srcCompat="@mipmap/ic_launcher_round" />
-
-            <ImageView
-                android:id="@+id/imgRowTwoPegFour"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="10dp"
-                android:layout_marginLeft="10dp"
-                android:layout_marginRight="10dp"
-                android:layout_marginStart="10dp"
-                app:srcCompat="@mipmap/ic_launcher_round" />
-        </TableRow>
-
-        <TableRow
-            android:id="@+id/rowGuessThree"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:gravity="center_vertical|center_horizontal">
-
-            <TableLayout
-                android:id="@+id/tblRowThreeAnswers"
-                android:layout_width="match_parent"
-                android:layout_height="100dp"
-                android:layout_marginLeft="10dp"
-                android:foregroundGravity="center_vertical|center_horizontal"
-                android:gravity="center_vertical|fill_horizontal"
-                android:isScrollContainer="false">
-
-                <TableRow
-                    android:id="@+id/TblAnswerRowThreeTopRow"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
-
-                    <ImageView
-                        android:id="@+id/imgRowThreeAnswerPegOne"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        app:srcCompat="@mipmap/ic_launcher_round" />
-
-                    <ImageView
-                        android:id="@+id/imgRowThreeAnswerPegTwo"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        app:srcCompat="@mipmap/ic_launcher_round" />
-                </TableRow>
-
-                <TableRow
-                    android:id="@+id/TblAnswerThreeBotRow"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
-
-                    <ImageView
-                        android:id="@+id/imgRowThreeAnswerPegThree"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        app:srcCompat="@mipmap/ic_launcher_round" />
-
-                    <ImageView
-                        android:id="@+id/imgRowThreeAnswerPegFour"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        app:srcCompat="@mipmap/ic_launcher_round" />
-
-                </TableRow>
-
-            </TableLayout>
-
-            <ImageView
-                android:id="@+id/imgRowThreePegOne"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="10dp"
-                android:layout_marginLeft="10dp"
-                android:layout_marginRight="10dp"
-                android:layout_marginStart="10dp"
-                app:srcCompat="@mipmap/ic_launcher_round" />
-
-            <ImageView
-                android:id="@+id/imgRowThreePegTwo"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="10dp"
-                android:layout_marginLeft="10dp"
-                android:layout_marginRight="10dp"
-                android:layout_marginStart="10dp"
-                app:srcCompat="@mipmap/ic_launcher_round" />
-
-            <ImageView
-                android:id="@+id/imgRowThreePegThree"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="10dp"
-                android:layout_marginLeft="10dp"
-                android:layout_marginRight="10dp"
-                android:layout_marginStart="10dp"
-                app:srcCompat="@mipmap/ic_launcher_round" />
-
-            <ImageView
-                android:id="@+id/imgRowThreePegFour"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="10dp"
-                android:layout_marginLeft="10dp"
-                android:layout_marginRight="10dp"
-                android:layout_marginStart="10dp"
-                app:srcCompat="@mipmap/ic_launcher_round" />
-        </TableRow>
-
-        <TableRow
-            android:id="@+id/rowGuessFour"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:gravity="center_vertical|center_horizontal">
-
-            <TableLayout
-                android:id="@+id/tblRowFourAnswers"
-                android:layout_width="match_parent"
-                android:layout_height="100dp"
-                android:layout_marginLeft="10dp"
-                android:foregroundGravity="center_vertical|center_horizontal"
-                android:gravity="center_vertical|fill_horizontal"
-                android:isScrollContainer="false">
-
-                <TableRow
-                    android:id="@+id/TblAnswerRowFourTopRow"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
-
-                    <ImageView
-                        android:id="@+id/imgRowFourAnswerPegOne"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        app:srcCompat="@mipmap/ic_launcher_round" />
-
-                    <ImageView
-                        android:id="@+id/imgRowFourAnswerPegTwo"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        app:srcCompat="@mipmap/ic_launcher_round" />
-                </TableRow>
-
-                <TableRow
-                    android:id="@+id/TblAnswerRowFourBotRow"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
-
-                    <ImageView
-                        android:id="@+id/imgRowFourAnswerPegThree"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        app:srcCompat="@mipmap/ic_launcher_round" />
-
-                    <ImageView
-                        android:id="@+id/imgRowFourAnswerPegFour"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        app:srcCompat="@mipmap/ic_launcher_round" />
-
-                </TableRow>
-
-            </TableLayout>
-
-            <ImageView
-                android:id="@+id/imgRowFourPegOne"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="10dp"
-                android:layout_marginLeft="10dp"
-                android:layout_marginRight="10dp"
-                android:layout_marginStart="10dp"
-                app:srcCompat="@mipmap/ic_launcher_round" />
-
-            <ImageView
-                android:id="@+id/imgRowFourPegTwo"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="10dp"
-                android:layout_marginLeft="10dp"
-                android:layout_marginRight="10dp"
-                android:layout_marginStart="10dp"
-                app:srcCompat="@mipmap/ic_launcher_round" />
-
-            <ImageView
-                android:id="@+id/imgRowFourPegThree"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="10dp"
-                android:layout_marginLeft="10dp"
-                android:layout_marginRight="10dp"
-                android:layout_marginStart="10dp"
-                app:srcCompat="@mipmap/ic_launcher_round" />
-
-            <ImageView
-                android:id="@+id/imgRowFourPegFour"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="10dp"
-                android:layout_marginLeft="10dp"
-                android:layout_marginRight="10dp"
-                android:layout_marginStart="10dp"
-                app:srcCompat="@mipmap/ic_launcher_round" />
-        </TableRow>
-
-        <TableRow
-            android:id="@+id/rowGuessFive"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-            <TableLayout
-                android:id="@+id/tblRowFiveAnswers"
-                android:layout_width="match_parent"
-                android:layout_height="100dp"
-                android:layout_marginLeft="10dp"
-                android:foregroundGravity="center_vertical|center_horizontal"
-                android:gravity="center_vertical|fill_horizontal"
-                android:isScrollContainer="false">
-
-                <TableRow
-                    android:id="@+id/TblAnswerRowFiveTopRow"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
-
-                    <ImageView
-                        android:id="@+id/imgRowFiveAnswerPegOne"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        app:srcCompat="@mipmap/ic_launcher_round" />
-
-                    <ImageView
-                        android:id="@+id/imgRowFiveAnswerPegTwo"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        app:srcCompat="@mipmap/ic_launcher_round" />
-                </TableRow>
-
-                <TableRow
-                    android:id="@+id/TblAnswerRowFiveBotRow"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
-
-                    <ImageView
-                        android:id="@+id/imgRowFiveAnswerPegThree"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        app:srcCompat="@mipmap/ic_launcher_round" />
-
-                    <ImageView
-                        android:id="@+id/imgRowFiveAnswerPegFour"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        app:srcCompat="@mipmap/ic_launcher_round" />
-
-                </TableRow>
-
-            </TableLayout>
-
-            <ImageView
-                android:id="@+id/imgRowFivePegOne"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                app:srcCompat="@mipmap/ic_launcher_round" />
-
-            <ImageView
-                android:id="@+id/imgRowFivePegTwo"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                app:srcCompat="@mipmap/ic_launcher_round" />
-
-            <ImageView
-                android:id="@+id/imgRowFivePegThree"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="10dp"
-                android:layout_marginLeft="10dp"
-                android:layout_marginRight="10dp"
-                android:layout_marginStart="10dp"
-                app:srcCompat="@mipmap/ic_launcher_round" />
-
-            <ImageView
-                android:id="@+id/imgRowFivePegFour"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="10dp"
-                android:layout_marginLeft="10dp"
-                android:layout_marginRight="10dp"
-                android:layout_marginStart="10dp"
-                app:srcCompat="@mipmap/ic_launcher_round" />
-
-        </TableRow>
-
-        <TableRow
-            android:id="@+id/rowGuessSix"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" />
-
-        <TableRow
-            android:id="@+id/rowGuessSeven"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-        </TableRow>
-
-    </TableLayout>
+        </TableLayout>
+    </ScrollView>
 
     <LinearLayout
         android:id="@+id/LyoUserPegs"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:gravity="bottom"
+        android:orientation="horizontal"
+        android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_below="@+id/tableLayout"
-        android:gravity="center_vertical|center_horizontal"
-        android:orientation="horizontal">
+        android:layout_alignParentStart="true">
 
         <ImageButton
             android:id="@+id/btnPegOne"

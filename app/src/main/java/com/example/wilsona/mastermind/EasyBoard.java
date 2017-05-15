@@ -47,7 +47,6 @@ public class EasyBoard extends AppCompatActivity {
 
 
         createMasterCode();
-
         createImages();
     }
 
