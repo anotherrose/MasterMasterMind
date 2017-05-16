@@ -623,19 +623,19 @@
                     app:srcCompat="@mipmap/ic_launcher_round" />
 
                 <ImageView
-                    android:id="@+id/imgRowSevenPegOne"
+                    android:id="@+id/imgRowSevenPegTwo"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     app:srcCompat="@mipmap/ic_launcher_round" />
 
                 <ImageView
-                    android:id="@+id/imgRowSevenPegOne"
+                    android:id="@+id/imgRowSevenPegThree"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     app:srcCompat="@mipmap/ic_launcher_round" />
 
                 <ImageView
-                    android:id="@+id/imgRowSevenPegOne"
+                    android:id="@+id/imgRowSevenPegFour"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     app:srcCompat="@mipmap/ic_launcher_round" />

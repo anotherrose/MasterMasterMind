@@ -38,18 +38,19 @@ public class Guess {
     public ImageView[] getGuesses() {
         return guesses;
     }
+
+    public void changeImages (int black, int white, int colorOne, int colorTwo, int colorThree, int colorFour){
+        int i;
+        int j;
+        for (i=0; i<black; i++)
+            answers[i].setImageResource(R.drawable.peg_black);
+        for(j=i+1; j<black+white; j++)
+            answers[j].setImageResource(R.drawable.peg_white);
+
+        guesses[0].setImageResource(colorOne);
+        guesses[1].setImageResource(colorTwo);
+        guesses[2].setImageResource(colorThree);
+        guesses[3].setImageResource(colorFour);
+
+    }
 }
-
-/*
-string n = "name";
-int n = 24;
-name+1=25;
-
-for (int i=0; i>5; i++){
- int n+i = i;
- }
-
- name1 = i
- name2 = i+1
- ...
- */

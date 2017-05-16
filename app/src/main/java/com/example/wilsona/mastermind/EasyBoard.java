@@ -22,7 +22,9 @@ public class EasyBoard extends AppCompatActivity {
     private int guess = 0;
     //private int imgEmpty, imgBlue, imgGreen, imgRed, imgOrange, imgYellow, imgMagenta;
     private int[] imgColors;
-    private Guess[] masterRowHolder = new Guess[4];
+    private Guess[] masterRowHolder = new Guess[7];
+    private int numColors=0;
+    private int numPositionsAndColor=0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -64,6 +66,17 @@ public class EasyBoard extends AppCompatActivity {
 
         masterRowHolder[3] = new Guess((ImageView) findViewById(R.id.imgRowFourAnswerPegOne),(ImageView) findViewById(R.id.imgRowFourAnswerPegTwo), (ImageView) findViewById(R.id.imgRowFourAnswerPegThree), (ImageView) findViewById(R.id.imgRowFourAnswerPegFour),
                 (ImageView) findViewById(R.id.imgRowFourPegOne), (ImageView) findViewById(R.id.imgRowFourPegTwo), (ImageView) findViewById(R.id.imgRowFourPegThree), (ImageView) findViewById(R.id.imgRowFourPegFour));
+
+        masterRowHolder[4] = new Guess((ImageView) findViewById(R.id.imgRowFiveAnswerPegOne),(ImageView) findViewById(R.id.imgRowFiveAnswerPegTwo), (ImageView) findViewById(R.id.imgRowFiveAnswerPegThree), (ImageView) findViewById(R.id.imgRowFiveAnswerPegFour),
+                (ImageView) findViewById(R.id.imgRowFivePegOne), (ImageView) findViewById(R.id.imgRowFivePegTwo), (ImageView) findViewById(R.id.imgRowFivePegThree), (ImageView) findViewById(R.id.imgRowFivePegFour));
+
+        masterRowHolder[5] = new Guess((ImageView) findViewById(R.id.imgRowSixAnswerPegOne),(ImageView) findViewById(R.id.imgRowSixAnswerPegTwo), (ImageView) findViewById(R.id.imgRowSixAnswerPegThree), (ImageView) findViewById(R.id.imgRowSixAnswerPegFour),
+                (ImageView) findViewById(R.id.imgRowSixPegOne), (ImageView) findViewById(R.id.imgRowSixPegTwo), (ImageView) findViewById(R.id.imgRowSixPegThree), (ImageView) findViewById(R.id.imgRowSixPegFour));
+
+        masterRowHolder[6] = new Guess((ImageView) findViewById(R.id.imgRowSevenAnswerPegOne),(ImageView) findViewById(R.id.imgRowSevenAnswerPegTwo), (ImageView) findViewById(R.id.imgRowSevenAnswerPegThree), (ImageView) findViewById(R.id.imgRowFourAnswerPegFour),
+                (ImageView) findViewById(R.id.imgRowSevenPegOne), (ImageView) findViewById(R.id.imgRowSevenPegTwo), (ImageView) findViewById(R.id.imgRowSevenPegThree), (ImageView) findViewById(R.id.imgRowSevenPegFour));
+
+
     }
 
 
@@ -73,6 +86,7 @@ public class EasyBoard extends AppCompatActivity {
         masterCode = new peg[4];
         int color;
         int pos=0;
+        guess++;
 
         for(int i=0; i<imgColors.length; i++){
             unusedColors.add(imgColors[i]);
@@ -95,10 +109,10 @@ public class EasyBoard extends AppCompatActivity {
 
 
     public void submit(View view) {
-        peg pegOne = new peg(1,clrOne);
-        peg pegTwo = new peg(2,clrTwo);
-        peg pegThree= new peg(3,clrThree);
-        peg pegFour = new peg(4,clrFour);
+        peg pegOne = new peg(1,changePegColor(clrOne));
+        peg pegTwo = new peg(2,changePegColor(clrTwo));
+        peg pegThree= new peg(3,changePegColor(clrThree));
+        peg pegFour = new peg(4,changePegColor(clrFour));
 
         clrOne=0;
         clrTwo=0;
@@ -106,11 +120,38 @@ public class EasyBoard extends AppCompatActivity {
         clrFour=0;
 
         userPegs = new peg[]{pegOne, pegTwo, pegThree, pegFour};
-
+        
+        comparePegs();
+        
         for(int i=0; i<gameButtons.length;i++)
             changeColor(gameButtons[i],0);
 
         submit.setEnabled(false);
+    }
+
+
+    private void comparePegs() {
+        for (peg gameP : masterCode)
+            for (peg userP : userPegs){
+            if (userP.comparePositionAndColor(gameP)) {
+                numPositionsAndColor++;
+                if (numPositionsAndColor == 4){
+                    showWinScreen();
+                    return;
+                }
+                if (numPositionsAndColor<4 && guess>=7) {
+                    showLoseScreen();
+                    return;
+                }
+            }
+                else if (userP.compareColor(gameP))
+                        numColors++;
+        }
+        showPegs();
+    }
+
+    private void showPegs() {
+        masterRowHolder[guess].changeImages(numPositionsAndColor,numColors,userPegs[0].getColorNum(),userPegs[1].getColorNum(),userPegs[2].getColorNum(),userPegs[3].getColorNum());
     }
 
 
@@ -168,6 +209,24 @@ public class EasyBoard extends AppCompatActivity {
         if (clrOne>0&&clrTwo>0&&clrThree>0&&clrFour>0){
             submit.setEnabled(true);
         }
+    }
+
+    private int changePegColor(int clr) {
+        switch (clr){
+            case 1: return imgColors[0];
+            case 2: return imgColors[1];
+            case 3: return imgColors[2];
+            case 4: return imgColors[3];
+            case 5: return imgColors[4];
+            case 6: return imgColors[5];
+            default: return 0;
+        }
+    }
+
+    private void showWinScreen() {
+    }
+
+    private void showLoseScreen() {
     }
 }
 

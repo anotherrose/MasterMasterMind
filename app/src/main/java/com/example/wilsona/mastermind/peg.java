@@ -42,6 +42,20 @@ public class peg {
         }
     }
 
+    public boolean compareColor(peg p){
+        if (this.imgColor==p.getColorNum())
+            return true;
+        else
+            return false;
+    }
+
+    public boolean comparePositionAndColor(peg p){
+        if (this.imgColor==p.getColorNum() && this.position==p.getPosition())
+            return true;
+        else
+            return false;
+    }
+
     public int getPosition(){
         return position;
     }
