@@ -44,7 +44,7 @@ public class Guess {
         int j;
         for (i=0; i<black; i++)
             answers[i].setImageResource(R.drawable.peg_black);
-        for(j=i+1; j<black+white; j++)
+        for(j=black; j<black+white; j++)
             answers[j].setImageResource(R.drawable.peg_white);
 
         guesses[0].setImageResource(colorOne);

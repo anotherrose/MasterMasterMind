@@ -79,14 +79,11 @@ public class EasyBoard extends AppCompatActivity {
 
     }
 
-
-
     private void createMasterCode() {
         ArrayList<Integer> unusedColors= new ArrayList<>();
         masterCode = new peg[4];
         int color;
         int pos=0;
-        guess++;
 
         for(int i=0; i<imgColors.length; i++){
             unusedColors.add(imgColors[i]);
@@ -122,11 +119,14 @@ public class EasyBoard extends AppCompatActivity {
         userPegs = new peg[]{pegOne, pegTwo, pegThree, pegFour};
         
         comparePegs();
+        showPegs();
         
         for(int i=0; i<gameButtons.length;i++)
             changeColor(gameButtons[i],0);
 
         submit.setEnabled(false);
+
+        guess++;
     }
 
 
@@ -139,7 +139,7 @@ public class EasyBoard extends AppCompatActivity {
                     showWinScreen();
                     return;
                 }
-                if (numPositionsAndColor<4 && guess>=7) {
+                if (numPositionsAndColor<4 && guess>=6) {
                     showLoseScreen();
                     return;
                 }
@@ -147,7 +147,6 @@ public class EasyBoard extends AppCompatActivity {
                 else if (userP.compareColor(gameP))
                         numColors++;
         }
-        showPegs();
     }
 
     private void showPegs() {
