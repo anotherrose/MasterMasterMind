@@ -9,7 +9,6 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 
 import java.util.ArrayList;
-import java.util.concurrent.ExecutionException;
 
 public class EasyBoard extends AppCompatActivity {
 
