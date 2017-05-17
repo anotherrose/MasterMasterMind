@@ -130,26 +130,34 @@ public class EasyBoard extends AppCompatActivity {
 
 
     private void comparePegs() {
-        for (peg gameP : masterCode)
-            for (peg userP : userPegs){
-            if (userP.comparePositionAndColor(gameP)) {
-                numPositionsAndColor++;
-                if (numPositionsAndColor == 4){
-                    showWinScreen();
-                    return;
-                }
-                if (numPositionsAndColor<4 && guess>=6) {
-                    showLoseScreen();
-                    return;
+            for (int i = 0; i<userPegs.length;i++){
+                //if (userPegs[i].comparePositionAndColor(masterCode[i])) {
+                if (userPegs[i].getColorNum()==masterCode[i].getColorNum()) {
+                    numPositionsAndColor++;
+                    if (numPositionsAndColor == 4) {
+                        showWinScreen();
+                        return;
+                    }
+                else
+                    for (peg gameP : masterCode) {
+                        if (userPegs[i].compareColor(gameP))
+                            numColors++;
+                    }
                 }
             }
-                else if (userP.compareColor(gameP))
-                        numColors++;
+            Log.i("blacks" , "" + numPositionsAndColor);
+            Log.i("whites" , "" + numColors);
+            if (numPositionsAndColor<4 && guess>=6) {
+                showLoseScreen();
+                return;
+            }
         }
-    }
+
 
     private void showPegs() {
         masterRowHolder[guess].changeImages(numPositionsAndColor,numColors,userPegs[0].getColorNum(),userPegs[1].getColorNum(),userPegs[2].getColorNum(),userPegs[3].getColorNum());
+        numColors=0;
+        numPositionsAndColor=0;
     }
 
 
