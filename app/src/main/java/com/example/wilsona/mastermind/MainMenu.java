@@ -20,6 +20,7 @@ public class MainMenu extends AppCompatActivity {
 
     }
 
+    //changes screens
     public void StartEasy(View view) {
         Intent intent = new Intent(this, EasyBoard.class);
         startActivity(intent);

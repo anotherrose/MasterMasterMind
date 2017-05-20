@@ -16,6 +16,7 @@ public class Guess {
         setGuesses(gOne,gTwo,gThree,gFour);
     }
 
+    //changes the images in the guess array
     private void setGuesses(ImageView gOne, ImageView gTwo, ImageView gThree, ImageView gFour) {
         guesses[0]=gOne;
         guesses[1]=gTwo;
@@ -24,6 +25,7 @@ public class Guess {
 
     }
 
+    //changes the images in the answer array
     private void setAnswers(ImageView aOne, ImageView aTwo, ImageView aThree, ImageView aFour) {
         answers[0]=aOne;
         answers[1]=aTwo;
@@ -31,6 +33,7 @@ public class Guess {
         answers[3]=aFour;
     }
 
+    //returns array of images
     public ImageView[] getAnswers() {
         return answers;
     }
@@ -39,6 +42,7 @@ public class Guess {
         return guesses;
     }
 
+    //cchange the image of the answer and guess array
     public void changeImages (int black, int white, int colorOne, int colorTwo, int colorThree, int colorFour){
         int i;
         int j;

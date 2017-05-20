@@ -22,6 +22,7 @@ public class WinScreen extends AppCompatActivity {
         handler.postDelayed(runnable,5000);
     }
 
+    //changes screens
     private void closeScreen() {
         Intent intent = new Intent(this, MainMenu.class);
         startActivity(intent);

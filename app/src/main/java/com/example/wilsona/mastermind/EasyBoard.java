@@ -20,7 +20,6 @@ public class EasyBoard extends AppCompatActivity {
     private peg[] userPegs;
     private peg[] masterCode;
     private int guess = 0;
-    //private int imgEmpty, imgBlue, imgGreen, imgRed, imgOrange, imgYellow, imgMagenta;
     private int[] imgColors;
     private Guess[] masterRowHolder = new Guess[7];
     private int numColors=0;
@@ -53,7 +52,7 @@ public class EasyBoard extends AppCompatActivity {
     }
 
 
-
+//fills an array with guess classes
     private void createImages() {
         masterRowHolder[0] = new Guess((ImageView) findViewById(R.id.imgRowOneAnswerPegOne),(ImageView) findViewById(R.id.imgRowOneAnswerPegTwo), (ImageView) findViewById(R.id.imgRowOneAnswerPegThree), (ImageView) findViewById(R.id.imgRowOneAnswerPegFour),
                 (ImageView) findViewById(R.id.imgRowOnePegOne), (ImageView) findViewById(R.id.imgRowOnePegTwo), (ImageView) findViewById(R.id.imgRowOnePegThree), (ImageView) findViewById(R.id.imgRowOnePegFour));
@@ -79,6 +78,7 @@ public class EasyBoard extends AppCompatActivity {
 
     }
 
+//fills an array with peg classes with random colors
     private void createMasterCode() {
         ArrayList<Integer> unusedColors= new ArrayList<>();
         masterCode = new peg[4];
@@ -104,8 +104,9 @@ public class EasyBoard extends AppCompatActivity {
 
     }
 
-
+//does all the work
     public void submit(View view) {
+        //resets user peg selection
         peg pegOne = new peg(1,changePegColor(clrOne));
         peg pegTwo = new peg(2,changePegColor(clrTwo));
         peg pegThree= new peg(3,changePegColor(clrThree));
@@ -117,7 +118,8 @@ public class EasyBoard extends AppCompatActivity {
         clrFour=0;
 
         userPegs = new peg[]{pegOne, pegTwo, pegThree, pegFour};
-        
+
+        //compares the user submitted guess to the answer code and shows results
         comparePegs();
         showPegs();
         
@@ -129,7 +131,7 @@ public class EasyBoard extends AppCompatActivity {
         guess++;
     }
 
-
+//compares user selected pegs to answer pegs
     private void comparePegs() {
         boolean foundBlack = false;
             for (int i = 0; i<userPegs.length;i++){
@@ -152,18 +154,17 @@ public class EasyBoard extends AppCompatActivity {
             Log.i("whites" , "" + numColors);
             if (numPositionsAndColor<4 && guess>=6) {
                 showLoseScreen();
-                return;
             }
         }
 
-
+//changes images to show results
     private void showPegs() {
         masterRowHolder[guess].changeImages(numPositionsAndColor,numColors,userPegs[0].getColorNum(),userPegs[1].getColorNum(),userPegs[2].getColorNum(),userPegs[3].getColorNum());
         numColors=0;
         numPositionsAndColor=0;
     }
 
-
+//onclick listeners that change button image
     public void buttonOneChange(View view) {
         if(clrOne>=imgColors.length)
             clrOne=1;
@@ -196,6 +197,7 @@ public class EasyBoard extends AppCompatActivity {
         changeColor(btnPegFour,clrFour);
     }
 
+//changes the image of a button
     private void changeColor(ImageButton peg, int clr) {
         switch (clr){
             case 0: peg.setImageResource(R.drawable.peg_empty);
@@ -220,6 +222,7 @@ public class EasyBoard extends AppCompatActivity {
         }
     }
 
+//change the color of a peg class object
     private int changePegColor(int clr) {
         switch (clr){
             case 1: return imgColors[0];
@@ -232,6 +235,7 @@ public class EasyBoard extends AppCompatActivity {
         }
     }
 
+//shows win or loose screen
     private void showWinScreen() {
         Intent intent = new Intent(this, WinScreen.class);
         startActivity(intent);

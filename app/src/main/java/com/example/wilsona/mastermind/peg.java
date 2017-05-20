@@ -13,11 +13,7 @@ public class peg {
         imgColor = c;
     }
 
-    public peg(int n, String c){
-        position = n;
-        imgColor = colorWordToNumber(c);
-    }
-
+    //converts color string to int
     private int colorWordToNumber(String c) {
         switch (c){
             case "red": return  R.drawable.peg_red;
@@ -30,6 +26,7 @@ public class peg {
         }
     }
 
+    //converts color int to string
     private String colorNumberToWord(int c){
         switch (c){
             case R.drawable.peg_red: return  "red";
@@ -42,6 +39,7 @@ public class peg {
         }
     }
 
+    //compares two peg's colors
     public boolean compareColor(peg p){
         if (this.imgColor==p.getColorNum())
             return true;
@@ -49,17 +47,10 @@ public class peg {
             return false;
     }
 
-    public boolean comparePositionAndColor(peg p){
-        if (this.imgColor==p.getColorNum() && this.position==p.getPosition())
-            return true;
-        else
-            return false;
-    }
-
+    //returns position or color values
     public int getPosition(){
         return position;
     }
-
     public int getColorNum() {
         return imgColor;
     }
@@ -67,13 +58,13 @@ public class peg {
         return colorNumberToWord(imgColor);
     }
 
+    //sets img or position values
     public void setColor(int color){
         imgColor=color;
     }
     public void setColor(String color){
         imgColor=colorWordToNumber(color);
     }
-
     public void setPosition(int position) {
         this.position = position;
     }

@@ -23,13 +23,10 @@ public class SplashScreen extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
 
-        TextView myText = (TextView) findViewById(R.id.txtSplashText);
-        String text = "WELCOME TO MASTER MIND NEWB";
-        myText.setText(text);
-
         handler.postDelayed(runnable,5000);
     }
 
+    //changes screens
     private void closeSplash() {
         Intent intent = new Intent(this, MainMenu.class);
         startActivity(intent);
