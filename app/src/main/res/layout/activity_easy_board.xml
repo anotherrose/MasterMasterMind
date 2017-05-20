@@ -681,7 +681,7 @@
             android:background="@android:color/background_light"
             android:onClick="buttonOneChange"
             android:scaleType="fitCenter"
-            app:srcCompat="@mipmap/ic_launcher_round" />
+            app:srcCompat="@drawable/peg_empty" />
 
         <ImageButton
             android:id="@+id/btnPegTwo"
@@ -691,7 +691,7 @@
             android:background="@android:color/background_light"
             android:onClick="buttonTwoChange"
             android:scaleType="fitCenter"
-            app:srcCompat="@mipmap/ic_launcher_round" />
+            app:srcCompat="@drawable/peg_empty" />
 
         <ImageButton
             android:id="@+id/btnPegThree"
@@ -701,7 +701,7 @@
             android:background="@android:color/background_light"
             android:onClick="buttonThreeChange"
             android:scaleType="fitCenter"
-            app:srcCompat="@mipmap/ic_launcher_round" />
+            app:srcCompat="@drawable/peg_empty" />
 
         <ImageButton
             android:id="@+id/btnPegFour"
@@ -711,7 +711,7 @@
             android:background="@android:color/background_light"
             android:onClick="buttonFourChange"
             android:scaleType="fitCenter"
-            app:srcCompat="@mipmap/ic_launcher_round" />
+            app:srcCompat="@drawable/peg_empty" />
 
         <Button
             android:id="@+id/btnSubmit"
