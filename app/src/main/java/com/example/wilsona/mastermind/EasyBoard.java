@@ -1,5 +1,6 @@
 package com.example.wilsona.mastermind;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -130,21 +131,23 @@ public class EasyBoard extends AppCompatActivity {
 
 
     private void comparePegs() {
+        boolean foundBlack = false;
             for (int i = 0; i<userPegs.length;i++){
-                //if (userPegs[i].comparePositionAndColor(masterCode[i])) {
                 if (userPegs[i].getColorNum()==masterCode[i].getColorNum()) {
                     numPositionsAndColor++;
+                    foundBlack = true;
                     if (numPositionsAndColor == 4) {
                         showWinScreen();
                         return;
                     }
-                else
+                }
+                if (!foundBlack)
                     for (peg gameP : masterCode) {
                         if (userPegs[i].compareColor(gameP))
                             numColors++;
                     }
+                    foundBlack=false;
                 }
-            }
             Log.i("blacks" , "" + numPositionsAndColor);
             Log.i("whites" , "" + numColors);
             if (numPositionsAndColor<4 && guess>=6) {
@@ -230,9 +233,13 @@ public class EasyBoard extends AppCompatActivity {
     }
 
     private void showWinScreen() {
+        Intent intent = new Intent(this, WinScreen.class);
+        startActivity(intent);
     }
 
     private void showLoseScreen() {
+        Intent intent = new Intent(this, LoseScreen.class);
+        startActivity(intent);
     }
 }
 

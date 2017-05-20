@@ -17,8 +17,9 @@
             </intent-filter>
         </activity>
         <activity android:name=".MainMenu" />
-        <activity android:name=".EasyBoard">
-        </activity>
+        <activity android:name=".EasyBoard" />
+        <activity android:name=".LoseScreen" />
+        <activity android:name=".WinScreen"></activity>
     </application>
 
 </manifest>

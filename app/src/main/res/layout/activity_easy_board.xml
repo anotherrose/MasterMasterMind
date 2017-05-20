@@ -48,14 +48,14 @@
                             android:layout_width="50dp"
                             android:layout_height="50dp"
                             android:scaleType="fitCenter"
-                            app:srcCompat="@mipmap/ic_launcher_round" />
+                            app:srcCompat="@drawable/peg_empty" />
 
                         <ImageView
                             android:id="@+id/imgRowOneAnswerPegTwo"
                             android:layout_width="50dp"
                             android:layout_height="50dp"
                             android:scaleType="fitCenter"
-                            app:srcCompat="@mipmap/ic_launcher_round" />
+                            app:srcCompat="@drawable/peg_empty" />
                     </TableRow>
 
                     <TableRow
@@ -68,14 +68,14 @@
                             android:layout_width="50dp"
                             android:layout_height="50dp"
                             android:scaleType="fitCenter"
-                            app:srcCompat="@mipmap/ic_launcher_round" />
+                            app:srcCompat="@drawable/peg_empty" />
 
                         <ImageView
                             android:id="@+id/imgRowOneAnswerPegFour"
                             android:layout_width="50dp"
                             android:layout_height="50dp"
                             android:scaleType="fitCenter"
-                            app:srcCompat="@mipmap/ic_launcher_round" />
+                            app:srcCompat="@drawable/peg_empty" />
 
                     </TableRow>
 
@@ -90,7 +90,7 @@
                     android:layout_marginRight="10dp"
                     android:layout_marginStart="10dp"
                     android:scaleType="fitCenter"
-                    app:srcCompat="@mipmap/ic_launcher_round" />
+                    app:srcCompat="@drawable/peg_empty" />
 
                 <ImageView
                     android:id="@+id/imgRowOnePegTwo"
@@ -101,7 +101,7 @@
                     android:layout_marginRight="10dp"
                     android:layout_marginStart="10dp"
                     android:scaleType="fitCenter"
-                    app:srcCompat="@mipmap/ic_launcher_round" />
+                    app:srcCompat="@drawable/peg_empty" />
 
                 <ImageView
                     android:id="@+id/imgRowOnePegThree"
@@ -112,7 +112,7 @@
                     android:layout_marginRight="10dp"
                     android:layout_marginStart="10dp"
                     android:scaleType="fitCenter"
-                    app:srcCompat="@mipmap/ic_launcher_round" />
+                    app:srcCompat="@drawable/peg_empty" />
 
                 <ImageView
                     android:id="@+id/imgRowOnePegFour"
@@ -123,7 +123,7 @@
                     android:layout_marginRight="10dp"
                     android:layout_marginStart="10dp"
                     android:scaleType="fitCenter"
-                    app:srcCompat="@mipmap/ic_launcher_round" />
+                    app:srcCompat="@drawable/peg_empty" />
 
             </TableRow>
 
@@ -151,13 +151,13 @@
                             android:id="@+id/imgRowTwoAnswerPegOne"
                             android:layout_width="50dp"
                             android:layout_height="50dp"
-                            app:srcCompat="@mipmap/ic_launcher_round" />
+                            app:srcCompat="@drawable/peg_empty" />
 
                         <ImageView
                             android:id="@+id/imgRowTwoAnswerPegTwo"
                             android:layout_width="50dp"
                             android:layout_height="50dp"
-                            app:srcCompat="@mipmap/ic_launcher_round" />
+                            app:srcCompat="@drawable/peg_empty" />
                     </TableRow>
 
                     <TableRow
@@ -169,13 +169,13 @@
                             android:id="@+id/imgRowTwoAnswerPegThree"
                             android:layout_width="50dp"
                             android:layout_height="50dp"
-                            app:srcCompat="@mipmap/ic_launcher_round" />
+                            app:srcCompat="@drawable/peg_empty" />
 
                         <ImageView
                             android:id="@+id/imgRowTwoAnswerPegFour"
                             android:layout_width="50dp"
                             android:layout_height="50dp"
-                            app:srcCompat="@mipmap/ic_launcher_round" />
+                            app:srcCompat="@drawable/peg_empty" />
 
                     </TableRow>
 
@@ -189,7 +189,7 @@
                     android:layout_marginLeft="10dp"
                     android:layout_marginRight="10dp"
                     android:layout_marginStart="10dp"
-                    app:srcCompat="@mipmap/ic_launcher_round" />
+                    app:srcCompat="@drawable/peg_empty" />
 
                 <ImageView
                     android:id="@+id/imgRowTwoPegTwo"
@@ -199,7 +199,7 @@
                     android:layout_marginLeft="10dp"
                     android:layout_marginRight="10dp"
                     android:layout_marginStart="10dp"
-                    app:srcCompat="@mipmap/ic_launcher_round" />
+                    app:srcCompat="@drawable/peg_empty" />
 
                 <ImageView
                     android:id="@+id/imgRowTwoPegThree"
@@ -209,7 +209,7 @@
                     android:layout_marginLeft="10dp"
                     android:layout_marginRight="10dp"
                     android:layout_marginStart="10dp"
-                    app:srcCompat="@mipmap/ic_launcher_round" />
+                    app:srcCompat="@drawable/peg_empty" />
 
                 <ImageView
                     android:id="@+id/imgRowTwoPegFour"
@@ -219,7 +219,7 @@
                     android:layout_marginLeft="10dp"
                     android:layout_marginRight="10dp"
                     android:layout_marginStart="10dp"
-                    app:srcCompat="@mipmap/ic_launcher_round" />
+                    app:srcCompat="@drawable/peg_empty" />
             </TableRow>
 
             <TableRow
@@ -246,13 +246,13 @@
                             android:id="@+id/imgRowThreeAnswerPegOne"
                             android:layout_width="50dp"
                             android:layout_height="50dp"
-                            app:srcCompat="@mipmap/ic_launcher_round" />
+                            app:srcCompat="@drawable/peg_empty" />
 
                         <ImageView
                             android:id="@+id/imgRowThreeAnswerPegTwo"
                             android:layout_width="50dp"
                             android:layout_height="50dp"
-                            app:srcCompat="@mipmap/ic_launcher_round" />
+                            app:srcCompat="@drawable/peg_empty" />
                     </TableRow>
 
                     <TableRow
@@ -264,13 +264,13 @@
                             android:id="@+id/imgRowThreeAnswerPegThree"
                             android:layout_width="50dp"
                             android:layout_height="50dp"
-                            app:srcCompat="@mipmap/ic_launcher_round" />
+                            app:srcCompat="@drawable/peg_empty" />
 
                         <ImageView
                             android:id="@+id/imgRowThreeAnswerPegFour"
                             android:layout_width="50dp"
                             android:layout_height="50dp"
-                            app:srcCompat="@mipmap/ic_launcher_round" />
+                            app:srcCompat="@drawable/peg_empty" />
 
                     </TableRow>
 
@@ -284,7 +284,7 @@
                     android:layout_marginLeft="10dp"
                     android:layout_marginRight="10dp"
                     android:layout_marginStart="10dp"
-                    app:srcCompat="@mipmap/ic_launcher_round" />
+                    app:srcCompat="@drawable/peg_empty" />
 
                 <ImageView
                     android:id="@+id/imgRowThreePegTwo"
@@ -294,7 +294,7 @@
                     android:layout_marginLeft="10dp"
                     android:layout_marginRight="10dp"
                     android:layout_marginStart="10dp"
-                    app:srcCompat="@mipmap/ic_launcher_round" />
+                    app:srcCompat="@drawable/peg_empty" />
 
                 <ImageView
                     android:id="@+id/imgRowThreePegThree"
@@ -304,7 +304,7 @@
                     android:layout_marginLeft="10dp"
                     android:layout_marginRight="10dp"
                     android:layout_marginStart="10dp"
-                    app:srcCompat="@mipmap/ic_launcher_round" />
+                    app:srcCompat="@drawable/peg_empty" />
 
                 <ImageView
                     android:id="@+id/imgRowThreePegFour"
@@ -314,7 +314,7 @@
                     android:layout_marginLeft="10dp"
                     android:layout_marginRight="10dp"
                     android:layout_marginStart="10dp"
-                    app:srcCompat="@mipmap/ic_launcher_round" />
+                    app:srcCompat="@drawable/peg_empty" />
             </TableRow>
 
             <TableRow
@@ -341,13 +341,13 @@
                             android:id="@+id/imgRowFourAnswerPegOne"
                             android:layout_width="50dp"
                             android:layout_height="50dp"
-                            app:srcCompat="@mipmap/ic_launcher_round" />
+                            app:srcCompat="@drawable/peg_empty" />
 
                         <ImageView
                             android:id="@+id/imgRowFourAnswerPegTwo"
                             android:layout_width="50dp"
                             android:layout_height="50dp"
-                            app:srcCompat="@mipmap/ic_launcher_round" />
+                            app:srcCompat="@drawable/peg_empty" />
                     </TableRow>
 
                     <TableRow
@@ -359,13 +359,13 @@
                             android:id="@+id/imgRowFourAnswerPegThree"
                             android:layout_width="50dp"
                             android:layout_height="50dp"
-                            app:srcCompat="@mipmap/ic_launcher_round" />
+                            app:srcCompat="@drawable/peg_empty" />
 
                         <ImageView
                             android:id="@+id/imgRowFourAnswerPegFour"
                             android:layout_width="50dp"
                             android:layout_height="50dp"
-                            app:srcCompat="@mipmap/ic_launcher_round" />
+                            app:srcCompat="@drawable/peg_empty" />
 
                     </TableRow>
 
@@ -379,7 +379,7 @@
                     android:layout_marginLeft="10dp"
                     android:layout_marginRight="10dp"
                     android:layout_marginStart="10dp"
-                    app:srcCompat="@mipmap/ic_launcher_round" />
+                    app:srcCompat="@drawable/peg_empty" />
 
                 <ImageView
                     android:id="@+id/imgRowFourPegTwo"
@@ -389,7 +389,7 @@
                     android:layout_marginLeft="10dp"
                     android:layout_marginRight="10dp"
                     android:layout_marginStart="10dp"
-                    app:srcCompat="@mipmap/ic_launcher_round" />
+                    app:srcCompat="@drawable/peg_empty" />
 
                 <ImageView
                     android:id="@+id/imgRowFourPegThree"
@@ -399,7 +399,7 @@
                     android:layout_marginLeft="10dp"
                     android:layout_marginRight="10dp"
                     android:layout_marginStart="10dp"
-                    app:srcCompat="@mipmap/ic_launcher_round" />
+                    app:srcCompat="@drawable/peg_empty" />
 
                 <ImageView
                     android:id="@+id/imgRowFourPegFour"
@@ -409,7 +409,7 @@
                     android:layout_marginLeft="10dp"
                     android:layout_marginRight="10dp"
                     android:layout_marginStart="10dp"
-                    app:srcCompat="@mipmap/ic_launcher_round" />
+                    app:srcCompat="@drawable/peg_empty" />
             </TableRow>
 
             <TableRow
@@ -436,13 +436,13 @@
                             android:id="@+id/imgRowFiveAnswerPegOne"
                             android:layout_width="50dp"
                             android:layout_height="50dp"
-                            app:srcCompat="@mipmap/ic_launcher_round" />
+                            app:srcCompat="@drawable/peg_empty" />
 
                         <ImageView
                             android:id="@+id/imgRowFiveAnswerPegTwo"
                             android:layout_width="50dp"
                             android:layout_height="50dp"
-                            app:srcCompat="@mipmap/ic_launcher_round" />
+                            app:srcCompat="@drawable/peg_empty" />
                     </TableRow>
 
                     <TableRow
@@ -454,13 +454,13 @@
                             android:id="@+id/imgRowFiveAnswerPegThree"
                             android:layout_width="50dp"
                             android:layout_height="50dp"
-                            app:srcCompat="@mipmap/ic_launcher_round" />
+                            app:srcCompat="@drawable/peg_empty" />
 
                         <ImageView
                             android:id="@+id/imgRowFiveAnswerPegFour"
                             android:layout_width="50dp"
                             android:layout_height="50dp"
-                            app:srcCompat="@mipmap/ic_launcher_round" />
+                            app:srcCompat="@drawable/peg_empty" />
 
                     </TableRow>
 
@@ -471,13 +471,13 @@
                     android:id="@+id/imgRowFivePegOne"
                     android:layout_width="50dp"
                     android:layout_height="50dp"
-                    app:srcCompat="@mipmap/ic_launcher_round" />
+                    app:srcCompat="@drawable/peg_empty" />
 
                 <ImageView
                     android:id="@+id/imgRowFivePegTwo"
                     android:layout_width="50dp"
                     android:layout_height="50dp"
-                    app:srcCompat="@mipmap/ic_launcher_round" />
+                    app:srcCompat="@drawable/peg_empty" />
 
                 <ImageView
                     android:id="@+id/imgRowFivePegThree"
@@ -487,7 +487,7 @@
                     android:layout_marginLeft="10dp"
                     android:layout_marginRight="10dp"
                     android:layout_marginStart="10dp"
-                    app:srcCompat="@mipmap/ic_launcher_round" />
+                    app:srcCompat="@drawable/peg_empty" />
 
                 <ImageView
                     android:id="@+id/imgRowFivePegFour"
@@ -497,7 +497,7 @@
                     android:layout_marginLeft="10dp"
                     android:layout_marginRight="10dp"
                     android:layout_marginStart="10dp"
-                    app:srcCompat="@mipmap/ic_launcher_round" />
+                    app:srcCompat="@drawable/peg_empty" />
 
             </TableRow>
 
@@ -525,13 +525,13 @@
                             android:id="@+id/imgRowSixAnswerPegOne"
                             android:layout_width="50dp"
                             android:layout_height="50dp"
-                            app:srcCompat="@mipmap/ic_launcher_round" />
+                            app:srcCompat="@drawable/peg_empty" />
 
                         <ImageView
                             android:id="@+id/imgRowSixAnswerPegTwo"
                             android:layout_width="50dp"
                             android:layout_height="50dp"
-                            app:srcCompat="@mipmap/ic_launcher_round" />
+                            app:srcCompat="@drawable/peg_empty" />
                     </TableRow>
 
                     <TableRow
@@ -543,13 +543,13 @@
                             android:id="@+id/imgRowSixAnswerPegThree"
                             android:layout_width="50dp"
                             android:layout_height="50dp"
-                            app:srcCompat="@mipmap/ic_launcher_round" />
+                            app:srcCompat="@drawable/peg_empty" />
 
                         <ImageView
                             android:id="@+id/imgRowSixAnswerPegFour"
                             android:layout_width="50dp"
                             android:layout_height="50dp"
-                            app:srcCompat="@mipmap/ic_launcher_round" />
+                            app:srcCompat="@drawable/peg_empty" />
 
                     </TableRow>
 
@@ -559,25 +559,25 @@
                     android:id="@+id/imgRowSixPegOne"
                     android:layout_width="50dp"
                     android:layout_height="50dp"
-                    app:srcCompat="@mipmap/ic_launcher_round" />
+                    app:srcCompat="@drawable/peg_empty" />
 
                 <ImageView
                     android:id="@+id/imgRowSixPegTwo"
                     android:layout_width="50dp"
                     android:layout_height="50dp"
-                    app:srcCompat="@mipmap/ic_launcher_round" />
+                    app:srcCompat="@drawable/peg_empty" />
 
                 <ImageView
                     android:id="@+id/imgRowSixPegThree"
                     android:layout_width="50dp"
                     android:layout_height="50dp"
-                    app:srcCompat="@mipmap/ic_launcher_round" />
+                    app:srcCompat="@drawable/peg_empty" />
 
                 <ImageView
                     android:id="@+id/imgRowSixPegFour"
                     android:layout_width="50dp"
                     android:layout_height="50dp"
-                    app:srcCompat="@mipmap/ic_launcher_round" />
+                    app:srcCompat="@drawable/peg_empty" />
 
             </TableRow>
 
@@ -587,42 +587,52 @@
                 android:layout_height="match_parent"
                 android:gravity="center_vertical|center_horizontal">
 
-                <TableRow
-                    android:id="@+id/TblAnswerRowSevenTopRow"
+                <TableLayout
+                    android:id="@+id/tblRowSevenAnswers"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent">
+                    android:layout_height="100dp"
+                    android:layout_marginLeft="10dp"
+                    android:foregroundGravity="center_vertical|center_horizontal"
+                    android:gravity="center_vertical|fill_horizontal"
+                    android:isScrollContainer="false">
 
-                    <ImageView
-                        android:id="@+id/imgRowSevenAnswerPegOne"
-                        android:layout_width="50dp"
-                        android:layout_height="50dp"
-                        app:srcCompat="@mipmap/ic_launcher_round" />
+                    <TableRow
+                        android:id="@+id/TblAnswerRowSevenTopRow"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
 
-                    <ImageView
-                        android:id="@+id/imgRowSevenAnswerPegTwo"
-                        android:layout_width="50dp"
-                        android:layout_height="50dp"
-                        app:srcCompat="@mipmap/ic_launcher_round" />
-                </TableRow>
+                        <ImageView
+                            android:id="@+id/imgRowSevenAnswerPegOne"
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
+                            app:srcCompat="@mipmap/ic_launcher_round" />
 
-                <TableRow
-                    android:id="@+id/TblAnswerRowSevenBotRow"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
+                        <ImageView
+                            android:id="@+id/imgRowSevenAnswerPegTwo"
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
+                            app:srcCompat="@mipmap/ic_launcher_round" />
+                    </TableRow>
 
-                    <ImageView
-                        android:id="@+id/imgRowSevenAnswerPegThree"
-                        android:layout_width="50dp"
-                        android:layout_height="50dp"
-                        app:srcCompat="@mipmap/ic_launcher_round" />
+                    <TableRow
+                        android:id="@+id/TblAnswerRowSevenBotRow"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
 
-                    <ImageView
-                        android:id="@+id/imgRowSevenAnswerPegFour"
-                        android:layout_width="50dp"
-                        android:layout_height="50dp"
-                        app:srcCompat="@mipmap/ic_launcher_round" />
+                        <ImageView
+                            android:id="@+id/imgRowSevenAnswerPegThree"
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
+                            app:srcCompat="@mipmap/ic_launcher_round" />
 
-                </TableRow>
+                        <ImageView
+                            android:id="@+id/imgRowSevenAnswerPegFour"
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
+                            app:srcCompat="@mipmap/ic_launcher_round" />
+
+                    </TableRow>
+                </TableLayout>
 
                 <ImageView
                     android:id="@+id/imgRowSevenPegOne"
